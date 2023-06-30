@@ -1,97 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe\Service\Issuing;
-
-class AuthorizationService extends \Stripe\Service\AbstractService
-{
-    /**
-     * Returns a list of Issuing <code>Authorization</code> objects. The objects are
-     * sorted in descending order by creation date, with the most recently created
-     * object appearing first.
-     *
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Collection
-     */
-    public function all($params = null, $opts = null)
-    {
-        return $this->requestCollection('get', '/v1/issuing/authorizations', $params, $opts);
-    }
-
-    /**
-     * Approves a pending Issuing <code>Authorization</code> object. This request
-     * should be made within the timeout window of the <a
-     * href="/docs/issuing/controls/real-time-authorizations">real-time
-     * authorization</a> flow.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Issuing\Authorization
-     */
-    public function approve($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/issuing/authorizations/%s/approve', $id), $params, $opts);
-    }
-
-    /**
-     * Declines a pending Issuing <code>Authorization</code> object. This request
-     * should be made within the timeout window of the <a
-     * href="/docs/issuing/controls/real-time-authorizations">real time
-     * authorization</a> flow.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Issuing\Authorization
-     */
-    public function decline($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/issuing/authorizations/%s/decline', $id), $params, $opts);
-    }
-
-    /**
-     * Retrieves an Issuing <code>Authorization</code> object.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Issuing\Authorization
-     */
-    public function retrieve($id, $params = null, $opts = null)
-    {
-        return $this->request('get', $this->buildPath('/v1/issuing/authorizations/%s', $id), $params, $opts);
-    }
-
-    /**
-     * Updates the specified Issuing <code>Authorization</code> object by setting the
-     * values of the parameters passed. Any parameters not provided will be left
-     * unchanged.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Issuing\Authorization
-     */
-    public function update($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/issuing/authorizations/%s', $id), $params, $opts);
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\Issuing\AuthorizationService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\Issuing\AuthorizationService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0005</td>
+<td bgcolor="#eeeeec" align="right">360864</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\Issuing\AuthorizationService.php" bgcolor="#eeeeec">...\AuthorizationService.php<b>:</b>0</td>
+</tr>
+</table></font>

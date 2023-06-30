@@ -1,83 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe\Service;
-
-class DisputeService extends \Stripe\Service\AbstractService
-{
-    /**
-     * Returns a list of your disputes.
-     *
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Collection
-     */
-    public function all($params = null, $opts = null)
-    {
-        return $this->requestCollection('get', '/v1/disputes', $params, $opts);
-    }
-
-    /**
-     * Closing the dispute for a charge indicates that you do not have any evidence to
-     * submit and are essentially dismissing the dispute, acknowledging it as lost.
-     *
-     * The status of the dispute will change from <code>needs_response</code> to
-     * <code>lost</code>. <em>Closing a dispute is irreversible</em>.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Dispute
-     */
-    public function close($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/disputes/%s/close', $id), $params, $opts);
-    }
-
-    /**
-     * Retrieves the dispute with the given ID.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Dispute
-     */
-    public function retrieve($id, $params = null, $opts = null)
-    {
-        return $this->request('get', $this->buildPath('/v1/disputes/%s', $id), $params, $opts);
-    }
-
-    /**
-     * When you get a dispute, contacting your customer is always the best first step.
-     * If that doesn’t work, you can submit evidence to help us resolve the dispute in
-     * your favor. You can do this in your <a
-     * href="https://dashboard.stripe.com/disputes">dashboard</a>, but if you prefer,
-     * you can use the API to submit evidence programmatically.
-     *
-     * Depending on your dispute type, different evidence fields will give you a better
-     * chance of winning your dispute. To figure out which evidence fields to provide,
-     * see our <a href="/docs/disputes/categories">guide to dispute types</a>.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Dispute
-     */
-    public function update($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/disputes/%s', $id), $params, $opts);
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\DisputeService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\DisputeService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360672</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\DisputeService.php" bgcolor="#eeeeec">...\DisputeService.php<b>:</b>0</td>
+</tr>
+</table></font>

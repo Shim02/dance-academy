@@ -1,71 +1,24 @@
-<?php
-
-namespace WPForms\Admin\Education\Builder;
-
-use \WPForms\Admin\Education;
-
-/**
- * Builder/Providers Education feature.
- *
- * @since 1.6.6
- */
-class Providers extends Education\Builder\Panel {
-
-	/**
-	 * Panel slug.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return string
-	 **/
-	protected function get_name() {
-
-		return 'providers';
-	}
-
-	/**
-	 * Hooks.
-	 *
-	 * @since 1.6.6
-	 */
-	public function hooks() {
-
-		add_action( 'wpforms_providers_panel_sidebar', [ $this, 'filter_addons' ], 1 );
-		add_action( 'wpforms_providers_panel_sidebar', [ $this, 'display_addons' ], 500 );
-	}
-
-	/**
-	 * Ensure that we do not display activated addon items if those addons are not allowed according to the current license.
-	 *
-	 * @since 1.6.6
-	 */
-	public function filter_addons() {
-
-		$this->filter_not_allowed_addons( 'wpforms_providers_panel_sidebar' );
-	}
-
-	/**
-	 * Get addons for the Marketing panel.
-	 *
-	 * @since 1.7.7.2
-	 */
-	protected function get_addons() {
-
-		$addons = parent::get_addons();
-
-		/**
-		 * Google Sheets uses Providers API. All providers are automatically
-		 * added to the Marketing tab in the builder. We don't need the addon
-		 * on the Marketing tab because the addon is already added to
-		 * the builder's Settings tab.
-		 */
-		foreach ( $addons as $key => $addon ) {
-			if ( isset( $addon['slug'] ) && $addon['slug'] === 'wpforms-google-sheets' ) {
-				unset( $addons[ $key ] );
-				break;
-			}
-		}
-
-		return $addons;
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Admin\Education\Builder\Panel" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Builder\Providers.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Admin\Education\Builder\Panel" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Builder\Providers.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">360624</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Builder\Providers.php" bgcolor="#eeeeec">...\Providers.php<b>:</b>0</td>
+</tr>
+</table></font>

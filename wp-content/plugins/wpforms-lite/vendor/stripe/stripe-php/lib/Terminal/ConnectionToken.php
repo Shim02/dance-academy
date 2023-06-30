@@ -1,23 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe\Terminal;
-
-/**
- * A Connection Token is used by the Stripe Terminal SDK to connect to a reader.
- *
- * Related guide: <a
- * href="https://stripe.com/docs/terminal/readers/fleet-management#create">Fleet
- * Management</a>.
- *
- * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property string $location The id of the location that this connection token is scoped to.
- * @property string $secret Your application should pass this token to the Stripe Terminal SDK.
- */
-class ConnectionToken extends \Stripe\ApiResource
-{
-    const OBJECT_NAME = 'terminal.connection_token';
-
-    use \Stripe\ApiOperations\Create;
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Terminal\ConnectionToken.php on line <i>18</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Terminal\ConnectionToken.php on line <i>18</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360808</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Terminal\ConnectionToken.php" bgcolor="#eeeeec">...\ConnectionToken.php<b>:</b>0</td>
+</tr>
+</table></font>

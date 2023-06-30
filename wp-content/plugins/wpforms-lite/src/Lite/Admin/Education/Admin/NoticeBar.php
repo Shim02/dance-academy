@@ -1,72 +1,24 @@
-<?php
-
-namespace WPForms\Lite\Admin\Education\Admin;
-
-use \WPForms\Admin\Education;
-
-/**
- * Admin/NoticeBar Education feature for Lite.
- *
- * @since 1.6.6
- */
-class NoticeBar implements Education\EducationInterface {
-
-	/**
-	 * Indicate if current Education feature is allowed to load.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return bool
-	 */
-	public function allow_load() {
-
-		return wpforms_is_admin_page();
-	}
-
-	/**
-	 * Init.
-	 *
-	 * @since 1.6.6
-	 */
-	public function init() {
-
-		if ( ! $this->allow_load() ) {
-			return;
-		}
-
-		// Define hooks.
-		$this->hooks();
-	}
-
-	/**
-	 * Hooks.
-	 *
-	 * @since 1.6.6
-	 */
-	public function hooks() {
-
-		add_action( 'wpforms_admin_header_before', [ $this, 'display' ] );
-	}
-
-	/**
-	 * Notice bar display message.
-	 *
-	 * @since 1.6.6
-	 */
-	public function display() {
-
-		$dismissed = get_user_meta( get_current_user_id(), 'wpforms_dismissed', true );
-
-		if ( ! empty( $dismissed['edu-admin-notice-bar'] ) ) {
-			return;
-		}
-
-		echo wpforms_render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			'education/admin/notice-bar',
-			[
-				'upgrade_link' => wpforms_admin_upgrade_link( 'notice-bar', 'Upgrade to WPForms Pro' ),
-			],
-			true
-		);
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Interface "WPForms\Admin\Education\EducationInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Lite\Admin\Education\Admin\NoticeBar.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Interface "WPForms\Admin\Education\EducationInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Lite\Admin\Education\Admin\NoticeBar.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">360696</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Lite\Admin\Education\Admin\NoticeBar.php" bgcolor="#eeeeec">...\NoticeBar.php<b>:</b>0</td>
+</tr>
+</table></font>

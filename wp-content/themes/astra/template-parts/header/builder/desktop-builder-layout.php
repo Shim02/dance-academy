@@ -1,51 +1,24 @@
-<?php
-/**
- * Template part for displaying header row.
- *
- * @package Astra Builder
- */
-
-$astra_mobile_header_type = astra_get_option( 'mobile-header-type' );
-
-if ( 'full-width' === $astra_mobile_header_type ) {
-
-	$astra_mobile_header_type = 'off-canvas';
-}
-?>
-<div id="ast-desktop-header" data-toggle-type="<?php echo esc_attr( $astra_mobile_header_type ); ?>">
-	<?php
-		astra_main_header_bar_top();
-
-		/**
-		 * Astra Top Header
-		 */
-		do_action( 'astra_above_header' );
-
-		/**
-		 * Astra Main Header
-		 */
-		do_action( 'astra_primary_header' );
-
-		/**
-		 * Astra Bottom Header
-		 */
-		do_action( 'astra_below_header' );
-
-		astra_main_header_bar_bottom();
-	?>
-<?php
-if ( ( 'dropdown' === $astra_mobile_header_type && Astra_Builder_Helper::is_component_loaded( 'mobile-trigger', 'header' ) ) || is_customize_preview() ) {
-	$astra_content_alignment = astra_get_option( 'header-offcanvas-content-alignment', 'flex-start' );
-	$astra_alignment_class   = 'content-align-' . $astra_content_alignment . ' ';
-	?>
-	<div class="ast-desktop-header-content <?php echo esc_attr( $astra_alignment_class ); ?>">
-		<?php do_action( 'astra_desktop_header_content', 'popup', 'content' ); ?>
-	</div>
-<?php } ?>
-</div> <!-- Main Header Bar Wrap -->
-<?php
-/**
- * Astra Mobile Header
- */
-do_action( 'astra_mobile_header' );
-?>
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function astra_get_option() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\header\builder\desktop-builder-layout.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function astra_get_option() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\header\builder\desktop-builder-layout.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360432</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\header\builder\desktop-builder-layout.php" bgcolor="#eeeeec">...\desktop-builder-layout.php<b>:</b>0</td>
+</tr>
+</table></font>

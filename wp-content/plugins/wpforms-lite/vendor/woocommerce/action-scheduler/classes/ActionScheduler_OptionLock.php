@@ -1,49 +1,24 @@
-<?php
-
-/**
- * Provide a way to set simple transient locks to block behaviour
- * for up-to a given duration.
- *
- * Class ActionScheduler_OptionLock
- * @since 3.0.0
- */
-class ActionScheduler_OptionLock extends ActionScheduler_Lock {
-
-	/**
-	 * Set a lock using options for a given amount of time (60 seconds by default).
-	 *
-	 * Using an autoloaded option avoids running database queries or other resource intensive tasks
-	 * on frequently triggered hooks, like 'init' or 'shutdown'.
-	 *
-	 * For example, ActionScheduler_QueueRunner->maybe_dispatch_async_request() uses a lock to avoid
-	 * calling ActionScheduler_QueueRunner->has_maximum_concurrent_batches() every time the 'shutdown',
-	 * hook is triggered, because that method calls ActionScheduler_QueueRunner->store->get_claim_count()
-	 * to find the current number of claims in the database.
-	 *
-	 * @param string $lock_type A string to identify different lock types.
-	 * @bool True if lock value has changed, false if not or if set failed.
-	 */
-	public function set( $lock_type ) {
-		return update_option( $this->get_key( $lock_type ), time() + $this->get_duration( $lock_type ) );
-	}
-
-	/**
-	 * If a lock is set, return the timestamp it was set to expiry.
-	 *
-	 * @param string $lock_type A string to identify different lock types.
-	 * @return bool|int False if no lock is set, otherwise the timestamp for when the lock is set to expire.
-	 */
-	public function get_expiration( $lock_type ) {
-		return get_option( $this->get_key( $lock_type ) );
-	}
-
-	/**
-	 * Get the key to use for storing the lock in the transient
-	 *
-	 * @param string $lock_type A string to identify different lock types.
-	 * @return string
-	 */
-	protected function get_key( $lock_type ) {
-		return sprintf( 'action_scheduler_lock_%s', $lock_type );
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "ActionScheduler_Lock" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\ActionScheduler_OptionLock.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "ActionScheduler_Lock" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\ActionScheduler_OptionLock.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0005</td>
+<td bgcolor="#eeeeec" align="right">360896</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\ActionScheduler_OptionLock.php" bgcolor="#eeeeec">...\ActionScheduler_OptionLock.php<b>:</b>0</td>
+</tr>
+</table></font>

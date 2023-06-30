@@ -1,102 +1,24 @@
-<?php
-
-namespace WPForms\Admin\Tools\Views;
-
-use ActionScheduler_AdminView;
-
-/**
- * Class ActionScheduler view.
- *
- * @since 1.6.6
- */
-class ActionScheduler extends View {
-
-	/**
-	 * View slug.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @var string
-	 */
-	protected $slug = 'action-scheduler';
-
-	/**
-	 * Init view.
-	 *
-	 * @since 1.6.6
-	 */
-	public function init() {
-
-		if ( $this->admin_view_exists() ) {
-			ActionScheduler_AdminView::instance()->process_admin_ui();
-		}
-	}
-
-	/**
-	 * Get link to the view.
-	 *
-	 * @since 1.6.9
-	 *
-	 * @return string
-	 */
-	public function get_link() {
-
-		return add_query_arg(
-			[
-				's' => 'wpforms',
-			],
-			parent::get_link()
-		);
-	}
-
-	/**
-	 * Get view label.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return string
-	 */
-	public function get_label() {
-
-		return esc_html__( 'Scheduled Actions', 'wpforms-lite' );
-	}
-
-	/**
-	 * Checking user capability to view.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return bool
-	 */
-	public function check_capability() {
-
-		return wpforms_current_user_can();
-	}
-
-	/**
-	 * Display view content.
-	 *
-	 * @since 1.6.6
-	 */
-	public function display() {
-
-		if ( ! $this->admin_view_exists() ) {
-			return;
-		}
-
-		( new ActionSchedulerList() )->display_page();
-	}
-
-	/**
-	 * Check if ActionScheduler_AdminView class exists.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return bool
-	 */
-	private function admin_view_exists() {
-
-		return class_exists( 'ActionScheduler_AdminView' );
-	}
-
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Admin\Tools\Views\View" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Tools\Views\ActionScheduler.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Admin\Tools\Views\View" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Tools\Views\ActionScheduler.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0008</td>
+<td bgcolor="#eeeeec" align="right">361248</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Tools\Views\ActionScheduler.php" bgcolor="#eeeeec">...\ActionScheduler.php<b>:</b>0</td>
+</tr>
+</table></font>

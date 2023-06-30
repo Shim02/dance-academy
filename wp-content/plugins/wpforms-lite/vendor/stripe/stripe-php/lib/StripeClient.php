@@ -1,77 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe;
-
-/**
- * Client used to send requests to Stripe's API.
- *
- * @property \Stripe\Service\AccountLinkService $accountLinks
- * @property \Stripe\Service\AccountService $accounts
- * @property \Stripe\Service\ApplePayDomainService $applePayDomains
- * @property \Stripe\Service\ApplicationFeeService $applicationFees
- * @property \Stripe\Service\BalanceService $balance
- * @property \Stripe\Service\BalanceTransactionService $balanceTransactions
- * @property \Stripe\Service\BillingPortal\BillingPortalServiceFactory $billingPortal
- * @property \Stripe\Service\ChargeService $charges
- * @property \Stripe\Service\Checkout\CheckoutServiceFactory $checkout
- * @property \Stripe\Service\CountrySpecService $countrySpecs
- * @property \Stripe\Service\CouponService $coupons
- * @property \Stripe\Service\CreditNoteService $creditNotes
- * @property \Stripe\Service\CustomerService $customers
- * @property \Stripe\Service\DisputeService $disputes
- * @property \Stripe\Service\EphemeralKeyService $ephemeralKeys
- * @property \Stripe\Service\EventService $events
- * @property \Stripe\Service\ExchangeRateService $exchangeRates
- * @property \Stripe\Service\FileLinkService $fileLinks
- * @property \Stripe\Service\FileService $files
- * @property \Stripe\Service\InvoiceItemService $invoiceItems
- * @property \Stripe\Service\InvoiceService $invoices
- * @property \Stripe\Service\Issuing\IssuingServiceFactory $issuing
- * @property \Stripe\Service\MandateService $mandates
- * @property \Stripe\Service\OAuthService $oauth
- * @property \Stripe\Service\OrderReturnService $orderReturns
- * @property \Stripe\Service\OrderService $orders
- * @property \Stripe\Service\PaymentIntentService $paymentIntents
- * @property \Stripe\Service\PaymentMethodService $paymentMethods
- * @property \Stripe\Service\PayoutService $payouts
- * @property \Stripe\Service\PlanService $plans
- * @property \Stripe\Service\PriceService $prices
- * @property \Stripe\Service\ProductService $products
- * @property \Stripe\Service\PromotionCodeService $promotionCodes
- * @property \Stripe\Service\Radar\RadarServiceFactory $radar
- * @property \Stripe\Service\RefundService $refunds
- * @property \Stripe\Service\Reporting\ReportingServiceFactory $reporting
- * @property \Stripe\Service\ReviewService $reviews
- * @property \Stripe\Service\SetupAttemptService $setupAttempts
- * @property \Stripe\Service\SetupIntentService $setupIntents
- * @property \Stripe\Service\Sigma\SigmaServiceFactory $sigma
- * @property \Stripe\Service\SkuService $skus
- * @property \Stripe\Service\SourceService $sources
- * @property \Stripe\Service\SubscriptionItemService $subscriptionItems
- * @property \Stripe\Service\SubscriptionScheduleService $subscriptionSchedules
- * @property \Stripe\Service\SubscriptionService $subscriptions
- * @property \Stripe\Service\TaxRateService $taxRates
- * @property \Stripe\Service\Terminal\TerminalServiceFactory $terminal
- * @property \Stripe\Service\TokenService $tokens
- * @property \Stripe\Service\TopupService $topups
- * @property \Stripe\Service\TransferService $transfers
- * @property \Stripe\Service\WebhookEndpointService $webhookEndpoints
- */
-class StripeClient extends BaseStripeClient
-{
-    /**
-     * @var \Stripe\Service\CoreServiceFactory
-     */
-    private $coreServiceFactory;
-
-    public function __get($name)
-    {
-        if (null === $this->coreServiceFactory) {
-            $this->coreServiceFactory = new \Stripe\Service\CoreServiceFactory($this);
-        }
-
-        return $this->coreServiceFactory->__get($name);
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\BaseStripeClient" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\StripeClient.php on line <i>62</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\BaseStripeClient" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\StripeClient.php on line <i>62</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0004</td>
+<td bgcolor="#eeeeec" align="right">360992</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\StripeClient.php" bgcolor="#eeeeec">...\StripeClient.php<b>:</b>0</td>
+</tr>
+</table></font>

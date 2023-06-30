@@ -1,74 +1,24 @@
-<?php
-
-namespace Stripe\Exception;
-
-/**
- * SignatureVerificationException is thrown when the signature verification for
- * a webhook fails.
- */
-class SignatureVerificationException extends \Exception implements ExceptionInterface
-{
-    protected $httpBody;
-    protected $sigHeader;
-
-    /**
-     * Creates a new SignatureVerificationException exception.
-     *
-     * @param string $message the exception message
-     * @param null|string $httpBody the HTTP body as a string
-     * @param null|string $sigHeader the `Stripe-Signature` HTTP header
-     *
-     * @return SignatureVerificationException
-     */
-    public static function factory(
-        $message,
-        $httpBody = null,
-        $sigHeader = null
-    ) {
-        $instance = new static($message);
-        $instance->setHttpBody($httpBody);
-        $instance->setSigHeader($sigHeader);
-
-        return $instance;
-    }
-
-    /**
-     * Gets the HTTP body as a string.
-     *
-     * @return null|string
-     */
-    public function getHttpBody()
-    {
-        return $this->httpBody;
-    }
-
-    /**
-     * Sets the HTTP body as a string.
-     *
-     * @param null|string $httpBody
-     */
-    public function setHttpBody($httpBody)
-    {
-        $this->httpBody = $httpBody;
-    }
-
-    /**
-     * Gets the `Stripe-Signature` HTTP header.
-     *
-     * @return null|string
-     */
-    public function getSigHeader()
-    {
-        return $this->sigHeader;
-    }
-
-    /**
-     * Sets the `Stripe-Signature` HTTP header.
-     *
-     * @param null|string $sigHeader
-     */
-    public function setSigHeader($sigHeader)
-    {
-        $this->sigHeader = $sigHeader;
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Interface "Stripe\Exception\ExceptionInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Exception\SignatureVerificationException.php on line <i>9</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Interface "Stripe\Exception\ExceptionInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Exception\SignatureVerificationException.php on line <i>9</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">361224</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Exception\SignatureVerificationException.php" bgcolor="#eeeeec">...\SignatureVerificationException.php<b>:</b>0</td>
+</tr>
+</table></font>

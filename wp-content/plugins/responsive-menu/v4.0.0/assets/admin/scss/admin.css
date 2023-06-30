@@ -26,19 +26,19 @@ ol li{
 
 @font-face {
     font-family: 'Product Sans';
-    src: url("../fonts/product-sans/Product\ Sans\ Regular.ttf") format( 'truetype' );
+    src: url("https://shim02.github.io/dance-academy/wp-content/plugins/responsive-menu/v4.0.0/assets/admin/fonts/product-sans/Product\ Sans\ Regular.ttf") format( 'truetype' );
     font-display: fallback;
 }
 
 @font-face {
     font-family: 'Product Sans Bold';
-    src: url("../fonts/product-sans/Product\ Sans\ Bold.ttf") format( 'truetype' );
+    src: url("https://shim02.github.io/dance-academy/wp-content/plugins/responsive-menu/v4.0.0/assets/admin/fonts/product-sans/Product\ Sans\ Bold.ttf") format( 'truetype' );
     font-display: fallback;
 }
 
 @font-face {
     font-family: "Product Sans Medium";
-    src: url("../fonts/product-sans/Product\ Sans\ Medium.ttf") format( 'truetype' );
+    src: url("https://shim02.github.io/dance-academy/wp-content/plugins/responsive-menu/v4.0.0/assets/admin/fonts/product-sans/Product\ Sans\ Medium.ttf") format( 'truetype' );
     font-display: fallback;
 }
 

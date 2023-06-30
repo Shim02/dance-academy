@@ -1,71 +1,24 @@
-<?php
-
-/**
- * Class ActionScheduler_SimpleSchedule
- */
-class ActionScheduler_SimpleSchedule extends ActionScheduler_Abstract_Schedule {
-
-	/**
-	 * Deprecated property @see $this->__wakeup() for details.
-	 **/
-	private $timestamp = NULL;
-
-	/**
-	 * @param DateTime $after
-	 *
-	 * @return DateTime|null
-	 */
-	public function calculate_next( DateTime $after ) {
-		return null;
-	}
-
-	/**
-	 * @return bool
-	 */
-	public function is_recurring() {
-		return false;
-	}
-
-	/**
-	 * Serialize schedule with data required prior to AS 3.0.0
-	 *
-	 * Prior to Action Scheduler 3.0.0, schedules used different property names to refer
-	 * to equivalent data. For example, ActionScheduler_IntervalSchedule::start_timestamp
-	 * was the same as ActionScheduler_SimpleSchedule::timestamp. Action Scheduler 3.0.0
-	 * aligned properties and property names for better inheritance. To guard against the
-	 * scheduled date for single actions always being seen as "now" if downgrading to
-	 * Action Scheduler < 3.0.0, we need to also store the data with the old property names
-	 * so if it's unserialized in AS < 3.0, the schedule doesn't end up with a null recurrence.
-	 *
-	 * @return array
-	 */
-	public function __sleep() {
-
-		$sleep_params = parent::__sleep();
-
-		$this->timestamp = $this->scheduled_timestamp;
-
-		return array_merge( $sleep_params, array(
-			'timestamp',
-		) );
-	}
-
-	/**
-	 * Unserialize recurring schedules serialized/stored prior to AS 3.0.0
-	 *
-	 * Prior to Action Scheduler 3.0.0, schedules used different property names to refer
-	 * to equivalent data. For example, ActionScheduler_IntervalSchedule::start_timestamp
-	 * was the same as ActionScheduler_SimpleSchedule::timestamp. Action Scheduler 3.0.0
-	 * aligned properties and property names for better inheritance. To maintain backward
-	 * compatibility with schedules serialized and stored prior to 3.0, we need to correctly
-	 * map the old property names with matching visibility.
-	 */
-	public function __wakeup() {
-
-		if ( is_null( $this->scheduled_timestamp ) && ! is_null( $this->timestamp ) ) {
-			$this->scheduled_timestamp = $this->timestamp;
-			unset( $this->timestamp );
-		}
-		parent::__wakeup();
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "ActionScheduler_Abstract_Schedule" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\schedules\ActionScheduler_SimpleSchedule.php on line <i>6</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "ActionScheduler_Abstract_Schedule" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\schedules\ActionScheduler_SimpleSchedule.php on line <i>6</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0433</td>
+<td bgcolor="#eeeeec" align="right">362176</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\schedules\ActionScheduler_SimpleSchedule.php" bgcolor="#eeeeec">...\ActionScheduler_SimpleSchedule.php<b>:</b>0</td>
+</tr>
+</table></font>

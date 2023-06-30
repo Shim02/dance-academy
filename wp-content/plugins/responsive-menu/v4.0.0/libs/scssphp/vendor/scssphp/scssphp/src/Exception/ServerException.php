@@ -1,26 +1,24 @@
-<?php
-
-/**
- * SCSSPHP
- *
- * @copyright 2012-2020 Leaf Corcoran
- *
- * @license http://opensource.org/licenses/MIT MIT
- *
- * @link http://scssphp.github.io/scssphp
- */
-
-namespace ScssPhp\ScssPhp\Exception;
-
-@trigger_error(sprintf('The "%s" class is deprecated.', ServerException::class), E_USER_DEPRECATED);
-
-/**
- * Server Exception
- *
- * @author Anthon Pang <anthon.pang@gmail.com>
- *
- * @deprecated The Scssphp server should define its own exception instead.
- */
-class ServerException extends \Exception implements SassException
-{
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Interface "ScssPhp\ScssPhp\Exception\SassException" not found in C:\wamp64\www\dance_academy\wp-content\plugins\responsive-menu\v4.0.0\libs\scssphp\vendor\scssphp\scssphp\src\Exception\ServerException.php on line <i>24</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Interface "ScssPhp\ScssPhp\Exception\SassException" not found in C:\wamp64\www\dance_academy\wp-content\plugins\responsive-menu\v4.0.0\libs\scssphp\vendor\scssphp\scssphp\src\Exception\ServerException.php on line <i>24</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0007</td>
+<td bgcolor="#eeeeec" align="right">360848</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\responsive-menu\v4.0.0\libs\scssphp\vendor\scssphp\scssphp\src\Exception\ServerException.php" bgcolor="#eeeeec">...\ServerException.php<b>:</b>0</td>
+</tr>
+</table></font>

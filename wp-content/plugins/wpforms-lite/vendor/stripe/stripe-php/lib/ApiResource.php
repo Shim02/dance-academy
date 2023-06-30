@@ -1,120 +1,24 @@
-<?php
-
-namespace Stripe;
-
-/**
- * Class ApiResource.
- */
-abstract class ApiResource extends StripeObject
-{
-    use ApiOperations\Request;
-
-    /**
-     * @return \Stripe\Util\Set A list of fields that can be their own type of
-     * API resource (say a nested card under an account for example), and if
-     * that resource is set, it should be transmitted to the API on a create or
-     * update. Doing so is not the default behavior because API resources
-     * should normally be persisted on their own RESTful endpoints.
-     */
-    public static function getSavedNestedResources()
-    {
-        static $savedNestedResources = null;
-        if (null === $savedNestedResources) {
-            $savedNestedResources = new Util\Set();
-        }
-
-        return $savedNestedResources;
-    }
-
-    /**
-     * @var bool A flag that can be set a behavior that will cause this
-     * resource to be encoded and sent up along with an update of its parent
-     * resource. This is usually not desirable because resources are updated
-     * individually on their own endpoints, but there are certain cases,
-     * replacing a customer's source for example, where this is allowed.
-     */
-    public $saveWithParent = false;
-
-    public function __set($k, $v)
-    {
-        parent::__set($k, $v);
-        $v = $this->{$k};
-        if ((static::getSavedNestedResources()->includes($k))
-            && ($v instanceof ApiResource)) {
-            $v->saveWithParent = true;
-        }
-    }
-
-    /**
-     * @throws Exception\ApiErrorException
-     *
-     * @return ApiResource the refreshed resource
-     */
-    public function refresh()
-    {
-        $requestor = new ApiRequestor($this->_opts->apiKey, static::baseUrl());
-        $url = $this->instanceUrl();
-
-        list($response, $this->_opts->apiKey) = $requestor->request(
-            'get',
-            $url,
-            $this->_retrieveOptions,
-            $this->_opts->headers
-        );
-        $this->setLastResponse($response);
-        $this->refreshFrom($response->json, $this->_opts);
-
-        return $this;
-    }
-
-    /**
-     * @return string the base URL for the given class
-     */
-    public static function baseUrl()
-    {
-        return Stripe::$apiBase;
-    }
-
-    /**
-     * @return string the endpoint URL for the given class
-     */
-    public static function classUrl()
-    {
-        // Replace dots with slashes for namespaced resources, e.g. if the object's name is
-        // "foo.bar", then its URL will be "/v1/foo/bars".
-        $base = \str_replace('.', '/', static::OBJECT_NAME);
-
-        return "/v1/{$base}s";
-    }
-
-    /**
-     * @param null|string $id the ID of the resource
-     *
-     * @throws Exception\UnexpectedValueException if $id is null
-     *
-     * @return string the instance endpoint URL for the given class
-     */
-    public static function resourceUrl($id)
-    {
-        if (null === $id) {
-            $class = static::class;
-            $message = 'Could not determine which URL to request: '
-               . "{$class} instance has invalid ID: {$id}";
-
-            throw new Exception\UnexpectedValueException($message);
-        }
-        $id = Util\Util::utf8($id);
-        $base = static::classUrl();
-        $extn = \urlencode($id);
-
-        return "{$base}/{$extn}";
-    }
-
-    /**
-     * @return string the full API URL for this API resource
-     */
-    public function instanceUrl()
-    {
-        return static::resourceUrl($this['id']);
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\StripeObject" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\ApiResource.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\StripeObject" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\ApiResource.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0001</td>
+<td bgcolor="#eeeeec" align="right">361000</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\ApiResource.php" bgcolor="#eeeeec">...\ApiResource.php<b>:</b>0</td>
+</tr>
+</table></font>

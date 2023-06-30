@@ -1,102 +1,24 @@
-<?php
-
-namespace WPForms\Admin\Builder;
-
-use WPForms\Helpers\CacheBase;
-
-/**
- * Form templates cache handler.
- *
- * @since 1.6.8
- */
-class TemplatesCache extends CacheBase {
-
-	/**
-	 * Determine if the class is allowed to load.
-	 *
-	 * @since 1.6.8
-	 *
-	 * @return bool
-	 */
-	protected function allow_load() {
-
-		$has_permissions  = wpforms_current_user_can( [ 'create_forms', 'edit_forms' ] );
-		$allowed_requests = wpforms_is_admin_ajax() || wpforms_is_admin_page( 'builder' ) || wpforms_is_admin_page( 'templates' );
-		$allow            = wp_doing_cron() || wpforms_doing_wp_cli() || ( $has_permissions && $allowed_requests );
-
-		/**
-		 * Whether to load this class.
-		 *
-		 * @since 1.7.2
-		 *
-		 * @param bool $allow True or false.
-		 */
-		return (bool) apply_filters( 'wpforms_admin_builder_templatescache_allow_load', $allow ); // phpcs:ignore WPForms.PHP.ValidateHooks.InvalidHookName
-	}
-
-	/**
-	 * Provide settings.
-	 *
-	 * @since 1.6.8
-	 *
-	 * @return array Settings array.
-	 */
-	protected function setup() {
-
-		return [
-
-			// Remote source URL.
-			'remote_source' => 'https://wpforms.com/templates/api/get/',
-
-			// Cache file.
-			'cache_file'    => 'templates.json',
-
-			/**
-			 * Time-to-live of the templates cache files in seconds.
-			 *
-			 * This applies to `uploads/wpforms/cache/templates.json`
-			 * and all *.json files in `uploads/wpforms/cache/templates/` directory.
-			 *
-			 * @since 1.6.8
-			 *
-			 * @param integer $cache_ttl Cache time-to-live, in seconds.
-			 *                           Default value: WEEK_IN_SECONDS.
-			 */
-			'cache_ttl'     => (int) apply_filters( 'wpforms_admin_builder_templates_cache_ttl', WEEK_IN_SECONDS ),
-
-			// Scheduled update action.
-			'update_action' => 'wpforms_admin_builder_templates_cache_update',
-		];
-	}
-
-	/**
-	 * Prepare data to store in a local cache.
-	 *
-	 * @since 1.6.8
-	 *
-	 * @param array $data Raw data received by the remote request.
-	 *
-	 * @return array Prepared data for caching.
-	 */
-	protected function prepare_cache_data( $data ) {
-
-		if (
-			empty( $data ) ||
-			! is_array( $data ) ||
-			empty( $data['status'] ) ||
-			$data['status'] !== 'success' ||
-			empty( $data['data'] )
-		) {
-			return [];
-		}
-
-		$cache_data = $data['data'];
-
-		// Strip the word "Template" from the end of each template name.
-		foreach ( $cache_data['templates'] as $slug => $template ) {
-			$cache_data['templates'][ $slug ]['name'] = preg_replace( '/\sTemplate$/', '', $template['name'] );
-		}
-
-		return $cache_data;
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Helpers\CacheBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Builder\TemplatesCache.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Helpers\CacheBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Builder\TemplatesCache.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">360544</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Builder\TemplatesCache.php" bgcolor="#eeeeec">...\TemplatesCache.php<b>:</b>0</td>
+</tr>
+</table></font>

@@ -1,48 +1,24 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\Parser\Handler;
-
-use Symfony\Component\CssSelector\Parser\Reader;
-use Symfony\Component\CssSelector\Parser\TokenStream;
-
-/**
- * CSS selector comment handler.
- *
- * This component is a port of the Python cssselect library,
- * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
- *
- * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- *
- * @internal
- */
-class CommentHandler implements HandlerInterface
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function handle(Reader $reader, TokenStream $stream)
-    {
-        if ('/*' !== $reader->getSubstring(2)) {
-            return false;
-        }
-
-        $offset = $reader->getOffset('*/');
-
-        if (false === $offset) {
-            $reader->moveToEnd();
-        } else {
-            $reader->moveForward($offset + 2);
-        }
-
-        return true;
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Interface "Symfony\Component\CssSelector\Parser\Handler\HandlerInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\symfony\css-selector\Parser\Handler\CommentHandler.php on line <i>27</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Interface "Symfony\Component\CssSelector\Parser\Handler\HandlerInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\symfony\css-selector\Parser\Handler\CommentHandler.php on line <i>27</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360840</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\symfony\css-selector\Parser\Handler\CommentHandler.php" bgcolor="#eeeeec">...\CommentHandler.php<b>:</b>0</td>
+</tr>
+</table></font>

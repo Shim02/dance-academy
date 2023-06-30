@@ -1,80 +1,24 @@
-<?php
-
-namespace Elementor\App\Modules\ImportExport\Runners\Import;
-
-use Elementor\Plugin;
-use Elementor\Core\Settings\Page\Manager as PageManager;
-
-class Site_Settings extends Import_Runner_Base {
-
-	/**
-	 * @var int
-	 */
-	private $previous_kit_id;
-
-	/**
-	 * @var int
-	 */
-	private $active_kit_id;
-
-	/**
-	 * @var int
-	 */
-	private $imported_kit_id;
-
-	public static function get_name() : string {
-		return 'site-settings';
-	}
-
-	public function should_import( array $data ) {
-		return (
-			isset( $data['include'] ) &&
-			in_array( 'settings', $data['include'], true ) &&
-			! empty( $data['site_settings']['settings'] )
-		);
-	}
-
-	public function import( array $data, array $imported_data ) {
-		$new_site_settings = $data['site_settings']['settings'];
-		$title = $data['manifest']['title'] ?? 'Imported Kit';
-
-		$active_kit = Plugin::$instance->kits_manager->get_active_kit();
-
-		$this->active_kit_id = (int) $active_kit->get_id();
-		$this->previous_kit_id = (int) Plugin::$instance->kits_manager->get_previous_id();
-
-		$result = [];
-
-		$old_settings = $active_kit->get_meta( PageManager::META_KEY );
-
-		if ( ! $old_settings ) {
-			$old_settings = [];
-		}
-
-		if ( ! empty( $old_settings['custom_colors'] ) ) {
-			$new_site_settings['custom_colors'] = array_merge( $old_settings['custom_colors'], $new_site_settings['custom_colors'] );
-		}
-
-		if ( ! empty( $old_settings['custom_typography'] ) ) {
-			$new_site_settings['custom_typography'] = array_merge( $old_settings['custom_typography'], $new_site_settings['custom_typography'] );
-		}
-
-		$new_site_settings = array_replace_recursive( $old_settings, $new_site_settings );
-
-		$new_kit = Plugin::$instance->kits_manager->create_new_kit( $title, $new_site_settings );
-
-		$this->imported_kit_id = (int) $new_kit;
-
-		$result['site-settings'] = (bool) $new_kit;
-
-		return $result;
-	}
-
-	public function get_import_session_metadata() : array {
-		return [
-			'previous_kit_id' => $this->previous_kit_id,
-			'active_kit_id' => $this->active_kit_id,
-			'imported_kit_id' => $this->imported_kit_id,
-		];
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Elementor\App\Modules\ImportExport\Runners\Import\Import_Runner_Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\import\site-settings.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Elementor\App\Modules\ImportExport\Runners\Import\Import_Runner_Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\import\site-settings.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0102</td>
+<td bgcolor="#eeeeec" align="right">361904</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\import\site-settings.php" bgcolor="#eeeeec">...\site-settings.php<b>:</b>0</td>
+</tr>
+</table></font>

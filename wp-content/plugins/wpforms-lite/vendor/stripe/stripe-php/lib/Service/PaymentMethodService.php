@@ -1,121 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe\Service;
-
-class PaymentMethodService extends \Stripe\Service\AbstractService
-{
-    /**
-     * Returns a list of PaymentMethods for a given Customer.
-     *
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Collection
-     */
-    public function all($params = null, $opts = null)
-    {
-        return $this->requestCollection('get', '/v1/payment_methods', $params, $opts);
-    }
-
-    /**
-     * Attaches a PaymentMethod object to a Customer.
-     *
-     * To attach a new PaymentMethod to a customer for future payments, we recommend
-     * you use a <a href="/docs/api/setup_intents">SetupIntent</a> or a PaymentIntent
-     * with <a
-     * href="/docs/api/payment_intents/create#create_payment_intent-setup_future_usage">setup_future_usage</a>.
-     * These approaches will perform any necessary steps to ensure that the
-     * PaymentMethod can be used in a future payment. Using the
-     * <code>/v1/payment_methods/:id/attach</code> endpoint does not ensure that future
-     * payments can be made with the attached PaymentMethod. See <a
-     * href="/docs/payments/payment-intents#future-usage">Optimizing cards for future
-     * payments</a> for more information about setting up future payments.
-     *
-     * To use this PaymentMethod as the default for invoice or subscription payments,
-     * set <a
-     * href="/docs/api/customers/update#update_customer-invoice_settings-default_payment_method"><code>invoice_settings.default_payment_method</code></a>,
-     * on the Customer to the PaymentMethod’s ID.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\PaymentMethod
-     */
-    public function attach($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/payment_methods/%s/attach', $id), $params, $opts);
-    }
-
-    /**
-     * Creates a PaymentMethod object. Read the <a
-     * href="/docs/stripe-js/reference#stripe-create-payment-method">Stripe.js
-     * reference</a> to learn how to create PaymentMethods via Stripe.js.
-     *
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\PaymentMethod
-     */
-    public function create($params = null, $opts = null)
-    {
-        return $this->request('post', '/v1/payment_methods', $params, $opts);
-    }
-
-    /**
-     * Detaches a PaymentMethod object from a Customer.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\PaymentMethod
-     */
-    public function detach($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/payment_methods/%s/detach', $id), $params, $opts);
-    }
-
-    /**
-     * Retrieves a PaymentMethod object.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\PaymentMethod
-     */
-    public function retrieve($id, $params = null, $opts = null)
-    {
-        return $this->request('get', $this->buildPath('/v1/payment_methods/%s', $id), $params, $opts);
-    }
-
-    /**
-     * Updates a PaymentMethod object. A PaymentMethod must be attached a customer to
-     * be updated.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\PaymentMethod
-     */
-    public function update($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/payment_methods/%s', $id), $params, $opts);
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\PaymentMethodService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\PaymentMethodService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">360800</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\PaymentMethodService.php" bgcolor="#eeeeec">...\PaymentMethodService.php<b>:</b>0</td>
+</tr>
+</table></font>

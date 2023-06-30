@@ -1,113 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe\Service;
-
-class SubscriptionScheduleService extends \Stripe\Service\AbstractService
-{
-    /**
-     * Retrieves the list of your subscription schedules.
-     *
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Collection
-     */
-    public function all($params = null, $opts = null)
-    {
-        return $this->requestCollection('get', '/v1/subscription_schedules', $params, $opts);
-    }
-
-    /**
-     * Cancels a subscription schedule and its associated subscription immediately (if
-     * the subscription schedule has an active subscription). A subscription schedule
-     * can only be canceled if its status is <code>not_started</code> or
-     * <code>active</code>.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\SubscriptionSchedule
-     */
-    public function cancel($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/subscription_schedules/%s/cancel', $id), $params, $opts);
-    }
-
-    /**
-     * Creates a new subscription schedule object. Each customer can have up to 500
-     * active or scheduled subscriptions.
-     *
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\SubscriptionSchedule
-     */
-    public function create($params = null, $opts = null)
-    {
-        return $this->request('post', '/v1/subscription_schedules', $params, $opts);
-    }
-
-    /**
-     * Releases the subscription schedule immediately, which will stop scheduling of
-     * its phases, but leave any existing subscription in place. A schedule can only be
-     * released if its status is <code>not_started</code> or <code>active</code>. If
-     * the subscription schedule is currently associated with a subscription, releasing
-     * it will remove its <code>subscription</code> property and set the subscription’s
-     * ID to the <code>released_subscription</code> property.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\SubscriptionSchedule
-     */
-    public function release($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/subscription_schedules/%s/release', $id), $params, $opts);
-    }
-
-    /**
-     * Retrieves the details of an existing subscription schedule. You only need to
-     * supply the unique subscription schedule identifier that was returned upon
-     * subscription schedule creation.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\SubscriptionSchedule
-     */
-    public function retrieve($id, $params = null, $opts = null)
-    {
-        return $this->request('get', $this->buildPath('/v1/subscription_schedules/%s', $id), $params, $opts);
-    }
-
-    /**
-     * Updates an existing subscription schedule.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\SubscriptionSchedule
-     */
-    public function update($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/subscription_schedules/%s', $id), $params, $opts);
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\SubscriptionScheduleService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\SubscriptionScheduleService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">360864</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\SubscriptionScheduleService.php" bgcolor="#eeeeec">...\SubscriptionScheduleService.php<b>:</b>0</td>
+</tr>
+</table></font>

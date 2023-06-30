@@ -1,107 +1,24 @@
-<?php
-
-namespace WPForms\Lite\Admin\Education\Builder;
-
-use \WPForms\Admin\Education\EducationInterface;
-
-/**
- * Builder/DidYouKnow Education feature.
- *
- * @since 1.6.6
- */
-class DidYouKnow implements EducationInterface {
-
-	/**
-	 * Indicate if current Education feature is allowed to load.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return bool
-	 */
-	public function allow_load() {
-
-		return wpforms_is_admin_page( 'builder' );
-	}
-
-	/**
-	 * Init.
-	 *
-	 * @since 1.6.6
-	 */
-	public function init() {
-
-		if ( ! $this->allow_load() ) {
-			return;
-		}
-
-		// Define hooks.
-		$this->hooks();
-	}
-
-	/**
-	 * Hooks.
-	 *
-	 * @since 1.6.6
-	 */
-	public function hooks() {
-
-		add_action( 'wpforms_builder_settings_notifications_after', [ $this, 'notifications' ] );
-		add_action( 'wpforms_builder_settings_confirmations_after', [ $this, 'confirmations' ] );
-	}
-
-	/**
-	 * Display on the Notifications panel.
-	 *
-	 * @since 1.6.6
-	 */
-	public function notifications() {
-
-		$this->display(
-			'notifications',
-			[ 'desc' => esc_html__( 'You can have multiple notifications with conditional logic.', 'wpforms-lite' ) ]
-		);
-	}
-
-	/**
-	 * Display on the Confirmations panel.
-	 *
-	 * @since 1.6.6
-	 */
-	public function confirmations() {
-
-		$this->display(
-			'confirmations',
-			[ 'desc' => esc_html__( 'You can have multiple confirmations with conditional logic.', 'wpforms-lite' ) ]
-		);
-	}
-
-	/**
-	 * Display message.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @param string $section  Form builder section/area (slug).
-	 * @param array  $settings Notice settings array.
-	 */
-	private function display( $section, $settings ) {
-
-		$dismissed = get_user_meta( get_current_user_id(), 'wpforms_dismissed', true );
-
-		// Check if not dismissed.
-		if ( ! empty( $dismissed[ 'edu-builder-did-you-know-' . $section ] ) ) {
-			return;
-		}
-
-		echo wpforms_render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			'education/builder/did-you-know',
-			[
-				'desc'    => $settings['desc'],
-				'more'    => ! empty( $settings['more'] ) ? $settings['more'] : '',
-				'link'    => wpforms_admin_upgrade_link( 'Form Builder DYK', ucfirst( $section ) ),
-				'section' => $section,
-
-			],
-			true
-		);
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Interface "WPForms\Admin\Education\EducationInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Lite\Admin\Education\Builder\DidYouKnow.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Interface "WPForms\Admin\Education\EducationInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Lite\Admin\Education\Builder\DidYouKnow.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">360696</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Lite\Admin\Education\Builder\DidYouKnow.php" bgcolor="#eeeeec">...\DidYouKnow.php<b>:</b>0</td>
+</tr>
+</table></font>

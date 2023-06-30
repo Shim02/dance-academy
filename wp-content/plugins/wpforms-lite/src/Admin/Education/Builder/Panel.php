@@ -1,69 +1,24 @@
-<?php
-
-namespace WPForms\Admin\Education\Builder;
-
-use \WPForms\Admin\Education\AddonsListBase;
-
-/**
- * Base class for Builder/Settings, Builder/Providers, Builder/Payments Education features.
- *
- * @since 1.6.6
- */
-abstract class Panel extends AddonsListBase {
-
-	/**
-	 * Panel slug. Should be redefined in the real Builder/Panel class.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return string
-	 **/
-	abstract protected function get_name();
-
-	/**
-	 * Indicate if current Education feature is allowed to load.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return bool
-	 */
-	public function allow_load() {
-
-		// Load only in the Form Builder.
-		return wpforms_is_admin_page( 'builder' ) && ! empty( $this->get_name() );
-	}
-
-	/**
-	 * Get addons for the current panel.
-	 *
-	 * @since 1.6.6
-	 */
-	protected function get_addons() {
-
-		return $this->addons->get_by_category( $this->get_name() );
-	}
-
-	/**
-	 * Template name for rendering single addon item.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return string
-	 */
-	protected function get_single_addon_template() {
-
-		return 'education/builder/' . $this->get_name() . '-item';
-	}
-
-	/**
-	 * Display addons.
-	 *
-	 * @since 1.6.6
-	 */
-	public function display_addons() {
-
-		$this->single_addon_template = $this->get_single_addon_template();
-
-		parent::display_addons();
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Admin\Education\AddonsListBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Builder\Panel.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Admin\Education\AddonsListBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Builder\Panel.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360560</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Builder\Panel.php" bgcolor="#eeeeec">...\Panel.php<b>:</b>0</td>
+</tr>
+</table></font>

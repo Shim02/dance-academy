@@ -1,23 +1,24 @@
-<?php
-
-/**
- * Class ActionScheduler_CanceledAction
- *
- * Stored action which was canceled and therefore acts like a finished action but should always return a null schedule,
- * regardless of schedule passed to its constructor.
- */
-class ActionScheduler_CanceledAction extends ActionScheduler_FinishedAction {
-
-	/**
-	 * @param string $hook
-	 * @param array $args
-	 * @param ActionScheduler_Schedule $schedule
-	 * @param string $group
-	 */
-	public function __construct( $hook, array $args = array(), ActionScheduler_Schedule $schedule = null, $group = '' ) {
-		parent::__construct( $hook, $args, $schedule, $group );
-		if ( is_null( $schedule ) ) {
-			$this->set_schedule( new ActionScheduler_NullSchedule() );
-		}
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "ActionScheduler_FinishedAction" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\actions\ActionScheduler_CanceledAction.php on line <i>9</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "ActionScheduler_FinishedAction" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\actions\ActionScheduler_CanceledAction.php on line <i>9</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0007</td>
+<td bgcolor="#eeeeec" align="right">361312</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\actions\ActionScheduler_CanceledAction.php" bgcolor="#eeeeec">...\ActionScheduler_CanceledAction.php<b>:</b>0</td>
+</tr>
+</table></font>

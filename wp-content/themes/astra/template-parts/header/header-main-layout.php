@@ -1,30 +1,26 @@
-<?php
-/**
- * Template for Primary Header
- *
- * The header layout 2 for Astra Theme. ( No of sections - 1 [ Section 1 limit - 3 )
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @see https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package     Astra
- * @author      Astra
- * @copyright   Copyright (c) 2020, Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
- */
-
-?>
-
 <div class="main-header-bar-wrap">
-	<div <?php echo astra_attr( 'main-header-bar' ); ?>>
-		<?php astra_main_header_bar_top(); ?>
-		<div class="ast-container">
-
-			<div class="ast-flex main-header-container">
-				<?php astra_masthead_content(); ?>
-			</div><!-- Main Header Container -->
-		</div><!-- ast-row -->
-		<?php astra_main_header_bar_bottom(); ?>
-	</div> <!-- Main Header Bar -->
-</div> <!-- Main Header Bar Wrap -->
+	<div></div>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function astra_attr() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\header\header-main-layout.php on line <i>20</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function astra_attr() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\header\header-main-layout.php on line <i>20</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0008</td>
+<td bgcolor="#eeeeec" align="right">360344</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\header\header-main-layout.php" bgcolor="#eeeeec">...\header-main-layout.php<b>:</b>0</td>
+</tr>
+</table></font>
+</div>

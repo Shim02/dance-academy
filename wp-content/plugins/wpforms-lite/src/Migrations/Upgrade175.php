@@ -1,95 +1,24 @@
-<?php
-
-namespace WPForms\Migrations;
-
-use WPForms\Tasks\Meta;
-use WPForms\Tasks\Tasks;
-
-/**
- * Class v1.7.5 upgrade.
- *
- * @since 1.7.5
- *
- * @noinspection PhpUnused
- */
-class Upgrade175 extends UpgradeBase {
-
-	/**
-	 * Delete all task meta of not active tasks.
-	 *
-	 * @since 1.7.5
-	 *
-	 * @noinspection ElvisOperatorCanBeUsedInspection
-	 *
-	 * @return bool|null Upgrade result:
-	 *                   true  - the upgrade completed successfully,
-	 *                   false - in the case of failure,
-	 *                   null  - upgrade started but not yet finished (background task).
-	 */
-	public function run() {
-
-		global $wpdb;
-
-		if ( ! $this->as_tables_exist() ) {
-			return true;
-		}
-
-		$group = Tasks::GROUP;
-		$sql   = "SELECT DISTINCT a.args FROM {$wpdb->prefix}actionscheduler_actions a
-					JOIN {$wpdb->prefix}actionscheduler_groups g ON g.group_id = a.group_id
-					WHERE g.slug = '$group' AND a.status IN ('pending', 'in-progress')";
-
-		// phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.NotPrepared
-		$results = $wpdb->get_results( $sql, 'ARRAY_A' );
-		// phpcs:enable WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.NotPrepared
-
-		$results  = $results ? $results : [];
-		$meta_ids = [];
-
-		foreach ( $results as $result ) {
-			$args = isset( $result['args'] ) ? json_decode( $result['args'], true ) : null;
-
-			if ( $args && ! empty( $args['tasks_meta_id'] ) ) {
-				$meta_ids[] = $args['tasks_meta_id'];
-			}
-		}
-
-		$table_name = Meta::get_table_name();
-		$not_in     = $meta_ids ? wpforms_wpdb_prepare_in( $meta_ids ) : '0';
-
-		// phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.NoCaching
-		$wpdb->query(
-			"DELETE FROM {$table_name} WHERE id NOT IN ( {$not_in} )"
-		);
-
-		// phpcs:enable WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.NoCaching
-
-		return true;
-	}
-
-	/**
-	 * Check whether AS tables exist.
-	 *
-	 * @since 1.7.6
-	 *
-	 * @return bool
-	 */
-	private function as_tables_exist() {
-
-		global $wpdb;
-
-		$required_tables = [
-			$wpdb->prefix . 'actionscheduler_actions',
-			$wpdb->prefix . 'actionscheduler_groups',
-		];
-
-		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching
-		$tables    = $wpdb->get_col( "SHOW TABLES LIKE '" . $wpdb->prefix . "actionscheduler%'" );
-		$intersect = array_values( array_intersect( $tables, $required_tables ) );
-
-		sort( $intersect );
-		sort( $required_tables );
-
-		return $intersect === $required_tables;
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Migrations\UpgradeBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Migrations\Upgrade175.php on line <i>15</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Migrations\UpgradeBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Migrations\Upgrade175.php on line <i>15</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0008</td>
+<td bgcolor="#eeeeec" align="right">361280</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Migrations\Upgrade175.php" bgcolor="#eeeeec">...\Upgrade175.php<b>:</b>0</td>
+</tr>
+</table></font>

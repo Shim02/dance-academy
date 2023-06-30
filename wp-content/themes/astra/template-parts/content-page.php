@@ -1,44 +1,24 @@
-<?php
-/**
- * Template part for displaying page content in page.php.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Astra
- * @since 1.0.0
- */
-
-?>
-<?php astra_entry_before(); ?>
-<article
-<?php
-		echo astra_attr(
-			'article-page',
-			array(
-				'id'    => 'post-' . get_the_id(),
-				'class' => join( ' ', get_post_class() ),
-			)
-		);
-		?>
->
-	<?php astra_entry_top(); ?>
-
-	<?php astra_entry_content_single_page(); ?>
-
-	<?php
-		astra_edit_post_link(
-			sprintf(
-				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'astra' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			),
-			'<footer class="entry-footer"><span class="edit-link">',
-			'</span></footer><!-- .entry-footer -->'
-		);
-		?>
-
-	<?php astra_entry_bottom(); ?>
-
-</article><!-- #post-## -->
-
-<?php astra_entry_after(); ?>
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function astra_entry_before() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\content-page.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function astra_entry_before() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\content-page.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0004</td>
+<td bgcolor="#eeeeec" align="right">360160</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\content-page.php" bgcolor="#eeeeec">...\content-page.php<b>:</b>0</td>
+</tr>
+</table></font>

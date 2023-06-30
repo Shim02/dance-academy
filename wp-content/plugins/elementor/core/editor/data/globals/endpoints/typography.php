@@ -1,73 +1,24 @@
-<?php
-namespace Elementor\Core\Editor\Data\Globals\Endpoints;
-
-use Elementor\Plugin;
-
-class Typography extends Base {
-	public function get_name() {
-		return 'typography';
-	}
-
-	public function get_format() {
-		return 'globals/typography/{id}';
-	}
-
-	protected function get_kit_items() {
-		$result = [];
-
-		$kit = Plugin::$instance->kits_manager->get_active_kit_for_frontend();
-
-		// Use raw settings that doesn't have default values.
-		$kit_raw_settings = $kit->get_data( 'settings' );
-
-		if ( isset( $kit_raw_settings['system_typography'] ) ) {
-			$system_items = $kit_raw_settings['system_typography'];
-		} else {
-			// Get default items, but without empty defaults.
-			$control = $kit->get_controls( 'system_typography' );
-			$system_items = $control['default'];
-		}
-
-		$custom_items = $kit->get_settings( 'custom_typography' );
-
-		if ( ! $custom_items ) {
-			$custom_items = [];
-		}
-
-		$items = array_merge( $system_items, $custom_items );
-
-		foreach ( $items as $index => &$item ) {
-			foreach ( $item as $setting => $value ) {
-				$new_setting = str_replace( 'styles_', '', $setting, $count );
-				if ( $count ) {
-					$item[ $new_setting ] = $value;
-					unset( $item[ $setting ] );
-				}
-			}
-
-			$id = $item['_id'];
-
-			$result[ $id ] = [
-				'title' => $item['title'],
-				'id' => $id,
-			];
-
-			unset( $item['_id'], $item['title'] );
-
-			$result[ $id ]['value'] = $item;
-		}
-
-		return $result;
-	}
-
-	protected function convert_db_format( $item ) {
-		$db_format = [
-			'_id' => $item['id'],
-			'title' => $item['title'],
-		];
-
-		$db_format = array_merge( $item['value'], $db_format );
-
-		return $db_format;
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Elementor\Core\Editor\Data\Globals\Endpoints\Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\core\editor\data\globals\endpoints\typography.php on line <i>6</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Elementor\Core\Editor\Data\Globals\Endpoints\Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\core\editor\data\globals\endpoints\typography.php on line <i>6</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0004</td>
+<td bgcolor="#eeeeec" align="right">360688</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\elementor\core\editor\data\globals\endpoints\typography.php" bgcolor="#eeeeec">...\typography.php<b>:</b>0</td>
+</tr>
+</table></font>

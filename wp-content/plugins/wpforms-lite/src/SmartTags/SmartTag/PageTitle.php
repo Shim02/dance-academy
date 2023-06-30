@@ -1,78 +1,24 @@
-<?php
-
-namespace WPForms\SmartTags\SmartTag;
-
-/**
- * Class PageTitle.
- *
- * @since 1.6.7
- */
-class PageTitle extends SmartTag {
-
-	/**
-	 * Get smart tag value.
-	 *
-	 * @since 1.6.7
-	 *
-	 * @param array  $form_data Form data.
-	 * @param array  $fields    List of fields.
-	 * @param string $entry_id  Entry ID.
-	 *
-	 * @return string
-	 */
-	public function get_value( $form_data, $fields = [], $entry_id = '' ) {
-
-		// phpcs:disable WordPress.Security.NonceVerification.Missing
-		if ( ! empty( $_POST['page_title'] ) ) {
-			return sanitize_text_field( wp_unslash( $_POST['page_title'] ) );
-		}
-		// phpcs:enable WordPress.Security.NonceVerification.Missing
-
-		/*
-		 * In most cases `wp_title()` returns the value we're going to use, except:
-		 * - on static front page (we can use page title as a fallback),
-		 * - on standard front page with the latest post (we can use the site name as a fallback).
-		 */
-		if ( is_front_page() ) {
-			return wp_kses_post( is_page() ? get_the_title( get_the_ID() ) : get_bloginfo( 'name' ) );
-		}
-
-		return $this->get_wp_title();
-	}
-
-	/**
-	 * Retrieve a page title based on `wp_title()`.
-	 *
-	 * @since 1.7.9
-	 *
-	 * @return string
-	 */
-	private function get_wp_title() {
-
-		global $wp_filter;
-
-		// Back up all callbacks.
-		$callbacks = isset( $wp_filter['wp_title']->callbacks ) ? $wp_filter['wp_title']->callbacks : [];
-
-		if ( ! empty( $callbacks ) ) {
-			// Unset all callbacks.
-			$wp_filter['wp_title']->callbacks = [];
-		}
-
-		// Get the raw value.
-		$title = trim( wp_title( '', false ) );
-
-		// Run through the default transformations WordPress does on this hook.
-		$title = wptexturize( $title );
-		$title = convert_chars( $title );
-		$title = esc_html( $title );
-		$title = capital_P_dangit( $title );
-
-		if ( ! empty( $callbacks ) ) {
-			// Restore all callbacks.
-			$wp_filter['wp_title']->callbacks = $callbacks;
-		}
-
-		return $title;
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\SmartTags\SmartTag\SmartTag" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\SmartTags\SmartTag\PageTitle.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\SmartTags\SmartTag\SmartTag" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\SmartTags\SmartTag\PageTitle.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360560</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\SmartTags\SmartTag\PageTitle.php" bgcolor="#eeeeec">...\PageTitle.php<b>:</b>0</td>
+</tr>
+</table></font>

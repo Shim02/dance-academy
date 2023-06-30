@@ -1,38 +1,24 @@
-<?php
-
-namespace Stripe;
-
-/**
- * Class SingletonApiResource.
- */
-abstract class SingletonApiResource extends ApiResource
-{
-    protected static function _singletonRetrieve($options = null)
-    {
-        $opts = Util\RequestOptions::parse($options);
-        $instance = new static(null, $opts);
-        $instance->refresh();
-
-        return $instance;
-    }
-
-    /**
-     * @return string the endpoint associated with this singleton class
-     */
-    public static function classUrl()
-    {
-        // Replace dots with slashes for namespaced resources, e.g. if the object's name is
-        // "foo.bar", then its URL will be "/v1/foo/bar".
-        $base = \str_replace('.', '/', static::OBJECT_NAME);
-
-        return "/v1/{$base}";
-    }
-
-    /**
-     * @return string the endpoint associated with this singleton API resource
-     */
-    public function instanceUrl()
-    {
-        return static::classUrl();
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\SingletonApiResource.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\SingletonApiResource.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360656</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\SingletonApiResource.php" bgcolor="#eeeeec">...\SingletonApiResource.php<b>:</b>0</td>
+</tr>
+</table></font>

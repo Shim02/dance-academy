@@ -1,44 +1,29 @@
 <li class="rmp-accordion-item rmp-order-item">
 	<div class="rmp-accordion-title rmp-order-item-title">
-		<span class="item-title"><?php esc_html_e( 'Menu', 'responsive-menu' ); ?></span>
-		<span class="item-controls">
-			<input type='hidden' value='' name='menu[items_order][menu]'/>
-			<input type="checkbox" data-toggle="menu" value="on" id="rmp-item-order-menu"  class="no-updates toggle item-type" name="menu[items_order][menu]"
-			<?php
-			if ( ! empty( $options['items_order']['menu'] ) ) {
-				echo esc_attr( 'checked' );
-			}
-			?>
-			>
-		</span>
-	</div>
-
-	<div class="rmp-accordion-content rmp-menu-controls">
-		<?php
-			$control_manager->add_shortcut_link(
-				array(
-					'label'        => 'Menu Settings',
-					'target'       => 'tab-menu-styling',
-					'accordion_id' => 'ui-id-36',
-				)
-			);
-			$control_manager->add_select_control(
-				array(
-					'label'   => esc_html__( 'Menu container columns', 'responsive-menu' ),
-					'id'      => 'rmp-menu-container-columns',
-					'class'   => 'no-updates',
-					'class'   => 'rmp-menu-container-columns',
-					'name'    => 'menu[menu_container_columns]',
-					'options' => array(
-						''         => '1',
-						'50%'      => '2',
-						'33.3333%' => '3',
-						'25%'      => '4',
-						'20%'      => '5',
-					),
-					'value'   => rmp_get_value( $options, 'menu_container_columns' ),
-				)
-			);
-		?>
-	</div>
+		<span class="item-title"><br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function esc_html_e() in C:\wamp64\www\dance_academy\wp-content\plugins\responsive-menu\v4.0.0\templates\menu-elements\menu.php on line <i>3</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function esc_html_e() in C:\wamp64\www\dance_academy\wp-content\plugins\responsive-menu\v4.0.0\templates\menu-elements\menu.php on line <i>3</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0405</td>
+<td bgcolor="#eeeeec" align="right">360976</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\responsive-menu\v4.0.0\templates\menu-elements\menu.php" bgcolor="#eeeeec">...\menu.php<b>:</b>0</td>
+</tr>
+</table></font>
+</span>
+</div>
 </li>

@@ -1,100 +1,24 @@
-<?php
-
-/**
- * Abstract CRON expression field
- *
- * @author Michael Dowling <mtdowling@gmail.com>
- */
-abstract class CronExpression_AbstractField implements CronExpression_FieldInterface
-{
-    /**
-     * Check to see if a field is satisfied by a value
-     *
-     * @param string $dateValue Date value to check
-     * @param string $value     Value to test
-     *
-     * @return bool
-     */
-    public function isSatisfied($dateValue, $value)
-    {
-        if ($this->isIncrementsOfRanges($value)) {
-            return $this->isInIncrementsOfRanges($dateValue, $value);
-        } elseif ($this->isRange($value)) {
-            return $this->isInRange($dateValue, $value);
-        }
-
-        return $value == '*' || $dateValue == $value;
-    }
-
-    /**
-     * Check if a value is a range
-     *
-     * @param string $value Value to test
-     *
-     * @return bool
-     */
-    public function isRange($value)
-    {
-        return strpos($value, '-') !== false;
-    }
-
-    /**
-     * Check if a value is an increments of ranges
-     *
-     * @param string $value Value to test
-     *
-     * @return bool
-     */
-    public function isIncrementsOfRanges($value)
-    {
-        return strpos($value, '/') !== false;
-    }
-
-    /**
-     * Test if a value is within a range
-     *
-     * @param string $dateValue Set date value
-     * @param string $value     Value to test
-     *
-     * @return bool
-     */
-    public function isInRange($dateValue, $value)
-    {
-        $parts = array_map('trim', explode('-', $value, 2));
-
-        return $dateValue >= $parts[0] && $dateValue <= $parts[1];
-    }
-
-    /**
-     * Test if a value is within an increments of ranges (offset[-to]/step size)
-     *
-     * @param string $dateValue Set date value
-     * @param string $value     Value to test
-     *
-     * @return bool
-     */
-    public function isInIncrementsOfRanges($dateValue, $value)
-    {
-        $parts = array_map('trim', explode('/', $value, 2));
-        $stepSize = isset($parts[1]) ? $parts[1] : 0;
-        if ($parts[0] == '*' || $parts[0] === '0') {
-            return (int) $dateValue % $stepSize == 0;
-        }
-
-        $range = explode('-', $parts[0], 2);
-        $offset = $range[0];
-        $to = isset($range[1]) ? $range[1] : $dateValue;
-        // Ensure that the date value is within the range
-        if ($dateValue < $offset || $dateValue > $to) {
-            return false;
-        }
-
-        for ($i = $offset; $i <= $to; $i+= $stepSize) {
-            if ($i == $dateValue) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Interface "CronExpression_FieldInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\lib\cron-expression\CronExpression_AbstractField.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Interface "CronExpression_FieldInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\lib\cron-expression\CronExpression_AbstractField.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0007</td>
+<td bgcolor="#eeeeec" align="right">361848</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\lib\cron-expression\CronExpression_AbstractField.php" bgcolor="#eeeeec">...\CronExpression_AbstractField.php<b>:</b>0</td>
+</tr>
+</table></font>

@@ -1,73 +1,24 @@
-<?php
-
-namespace Elementor\App\Modules\ImportExport\Runners\Revert;
-
-use Elementor\App\Modules\ImportExport\Utils as ImportExportUtils;
-
-class Wp_Content extends Revert_Runner_Base {
-
-	public static function get_name() : string {
-		return 'wp-content';
-	}
-
-	public function should_revert( array $data ) : bool {
-		return (
-			isset( $data['runners'] ) &&
-			array_key_exists( static::get_name(), $data['runners'] )
-		);
-	}
-
-	public function revert( array $data ) {
-		$builtin_post_types = ImportExportUtils::get_builtin_wp_post_types();
-		$custom_post_types = $data['runners']['wp-content']['custom_post_types'] ?? [];
-
-		$post_types = array_merge( $builtin_post_types, $custom_post_types );
-
-		$query_args = [
-			'post_type' => $post_types,
-			'post_status' => 'any',
-			'posts_per_page' => -1,
-			'meta_query' => [
-				[
-					'key' => static::META_KEY_ELEMENTOR_EDIT_MODE,
-					'compare' => 'NOT EXISTS',
-				],
-				[
-					'key' => static::META_KEY_ELEMENTOR_IMPORT_SESSION_ID,
-					'value' => $data['session_id'],
-				],
-			],
-		];
-
-		$query = new \WP_Query( $query_args );
-
-		foreach ( $query->posts as $post ) {
-			wp_delete_post( $post->ID, true );
-		}
-
-		/**
-		 * Revert the nav menu terms.
-		 * BC: The nav menu in new kits will be imported as part of the taxonomies, but old kits
-		 * importing the nav menu terms as part from the wp-content import.
-		 */
-		$this->revert_nav_menus( $data );
-	}
-
-	private function revert_nav_menus( array $data ) {
-		$terms = get_terms( [
-			'taxonomy' => 'nav_menu',
-			'hide_empty' => false,
-			'get' => 'all',
-			'meta_query' => [
-				[
-					'key'       => static::META_KEY_ELEMENTOR_IMPORT_SESSION_ID,
-					'value'     => $data['session_id'],
-				],
-			],
-		] );
-
-		foreach ( $terms as $term ) {
-			wp_delete_term( $term->term_id, $term->taxonomy );
-		}
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Elementor\App\Modules\ImportExport\Runners\Revert\Revert_Runner_Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\revert\wp-content.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Elementor\App\Modules\ImportExport\Runners\Revert\Revert_Runner_Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\revert\wp-content.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0101</td>
+<td bgcolor="#eeeeec" align="right">361536</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\revert\wp-content.php" bgcolor="#eeeeec">...\wp-content.php<b>:</b>0</td>
+</tr>
+</table></font>

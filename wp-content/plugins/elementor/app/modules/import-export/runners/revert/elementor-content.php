@@ -1,94 +1,24 @@
-<?php
-
-namespace Elementor\App\Modules\ImportExport\Runners\Revert;
-
-use Elementor\App\Modules\ImportExport\Utils as ImportExportUtils;
-use Elementor\Plugin;
-
-class Elementor_Content extends Revert_Runner_Base {
-	private $show_page_on_front;
-
-	private $page_on_front_id;
-
-	public function __construct() {
-		$this->init_page_on_front_data();
-	}
-
-	public static function get_name() : string {
-		return 'elementor-content';
-	}
-
-	public function should_revert( array $data ) : bool {
-		return (
-			isset( $data['runners'] ) &&
-			array_key_exists( static::get_name(), $data['runners'] )
-		);
-	}
-
-	public function revert( array $data ) {
-		$elementor_post_types = ImportExportUtils::get_elementor_post_types();
-
-		$query_args = [
-			'post_type' => $elementor_post_types,
-			'post_status' => 'any',
-			'posts_per_page' => -1,
-			'meta_query' => [
-				[
-					'key' => static::META_KEY_ELEMENTOR_EDIT_MODE,
-					'compare' => 'EXISTS',
-				],
-				[
-					'key' => static::META_KEY_ELEMENTOR_IMPORT_SESSION_ID,
-					'value' => $data['session_id'],
-				],
-			],
-		];
-
-		$query = new \WP_Query( $query_args );
-
-		foreach ( $query->posts as $post ) {
-			$post_type_document = Plugin::$instance->documents->get( $post->ID );
-			$post_type_document->delete();
-
-			// Deleting the post will reset the show_on_front option. We need to set it to false,
-			// so we can set it back to what it was.
-			if ( $post->ID === $this->page_on_front_id ) {
-				$this->show_page_on_front = false;
-			}
-		}
-
-		$this->restore_page_on_front( $data );
-	}
-
-	private function init_page_on_front_data() {
-		$this->show_page_on_front = 'page' === get_option( 'show_on_front' );
-
-		if ( $this->show_page_on_front ) {
-			$this->page_on_front_id = (int) get_option( 'page_on_front' );
-		}
-	}
-
-	private function restore_page_on_front( $data ) {
-		if ( empty( $data['runners'][ static::get_name() ]['page_on_front'] ) ) {
-			return;
-		}
-
-		$page_on_front = $data['runners'][ static::get_name() ]['page_on_front'];
-
-		$document = Plugin::$instance->documents->get( $page_on_front );
-
-		if ( ! $document ) {
-			return;
-		}
-
-		$this->set_page_on_front( $document->get_main_id() );
-	}
-
-	private function set_page_on_front( $page_id ) {
-		update_option( 'page_on_front', $page_id );
-
-		if ( ! $this->show_page_on_front ) {
-			update_option( 'show_on_front', 'page' );
-		}
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Elementor\App\Modules\ImportExport\Runners\Revert\Revert_Runner_Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\revert\elementor-content.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Elementor\App\Modules\ImportExport\Runners\Revert\Revert_Runner_Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\revert\elementor-content.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0016</td>
+<td bgcolor="#eeeeec" align="right">362016</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\revert\elementor-content.php" bgcolor="#eeeeec">...\elementor-content.php<b>:</b>0</td>
+</tr>
+</table></font>

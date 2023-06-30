@@ -1,36 +1,24 @@
-<?php
-namespace Elementor\Core\Editor\Data\Globals;
-
-use Elementor\Data\V2\Base\Controller as Controller_Base;
-use Elementor\Data\V2\Base\Endpoint;
-use Elementor\Plugin;
-
-class Controller extends Controller_Base {
-	public function get_name() {
-		return 'globals';
-	}
-
-	public function register_endpoints() {
-		$this->register_endpoint( new Endpoints\Colors( $this ) );
-		$this->register_endpoint( new Endpoints\Typography( $this ) );
-	}
-
-	public function get_collection_params() {
-		// Does not have 'get_items' args (OPTIONS).
-		// Maybe TODO: try `$this->get_index_endpoint()->get_collection_params()`.
-		return [];
-	}
-
-	public function get_permission_callback( $request ) {
-		// Allow internal get global values. (e.g render global.css for a visitor)
-		if ( 'GET' === $request->get_method() && Plugin::$instance->data_manager_v2->is_internal() ) {
-			return true;
-		}
-
-		return current_user_can( 'edit_posts' );
-	}
-
-	protected function register_index_endpoint() {
-		$this->register_endpoint( new Endpoint\Index\AllChildren( $this ) );
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Elementor\Data\V2\Base\Controller" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\core\editor\data\globals\controller.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Elementor\Data\V2\Base\Controller" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\core\editor\data\globals\controller.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360560</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\elementor\core\editor\data\globals\controller.php" bgcolor="#eeeeec">...\controller.php<b>:</b>0</td>
+</tr>
+</table></font>

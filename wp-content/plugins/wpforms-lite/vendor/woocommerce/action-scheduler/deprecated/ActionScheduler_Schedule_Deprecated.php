@@ -1,29 +1,24 @@
-<?php
-
-/**
- * Class ActionScheduler_Abstract_Schedule
- */
-abstract class ActionScheduler_Schedule_Deprecated implements ActionScheduler_Schedule {
-
-	/**
-	 * Get the date & time this schedule was created to run, or calculate when it should be run
-	 * after a given date & time.
-	 *
-	 * @param DateTime $after DateTime to calculate against.
-	 *
-	 * @return DateTime|null
-	 */
-	public function next( DateTime $after = null ) {
-		if ( empty( $after ) ) {
-			$return_value       = $this->get_date();
-			$replacement_method = 'get_date()';
-		} else {
-			$return_value       = $this->get_next( $after );
-			$replacement_method = 'get_next( $after )';
-		}
-
-		_deprecated_function( __METHOD__, '3.0.0', __CLASS__ . '::' . $replacement_method ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
-		return $return_value;
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Interface "ActionScheduler_Schedule" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\deprecated\ActionScheduler_Schedule_Deprecated.php on line <i>6</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Interface "ActionScheduler_Schedule" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\deprecated\ActionScheduler_Schedule_Deprecated.php on line <i>6</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0306</td>
+<td bgcolor="#eeeeec" align="right">361320</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\deprecated\ActionScheduler_Schedule_Deprecated.php" bgcolor="#eeeeec">...\ActionScheduler_Schedule_Deprecated.php<b>:</b>0</td>
+</tr>
+</table></font>

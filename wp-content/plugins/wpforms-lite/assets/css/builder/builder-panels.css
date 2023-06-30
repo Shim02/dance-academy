@@ -1042,7 +1042,7 @@
 }
 
 .wpforms-builder-provider-connections-default::before {
-  background: url("../../images/builder/default-arrow.svg") no-repeat 0 0;
+  background: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/builder/default-arrow.svg") no-repeat 0 0;
   background-size: 97px 81px;
   content: "";
   height: 83px;

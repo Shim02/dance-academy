@@ -1,93 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe\Service;
-
-class InvoiceItemService extends \Stripe\Service\AbstractService
-{
-    /**
-     * Returns a list of your invoice items. Invoice items are returned sorted by
-     * creation date, with the most recently created invoice items appearing first.
-     *
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Collection
-     */
-    public function all($params = null, $opts = null)
-    {
-        return $this->requestCollection('get', '/v1/invoiceitems', $params, $opts);
-    }
-
-    /**
-     * Creates an item to be added to a draft invoice (up to 250 items per invoice). If
-     * no invoice is specified, the item will be on the next invoice created for the
-     * customer specified.
-     *
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\InvoiceItem
-     */
-    public function create($params = null, $opts = null)
-    {
-        return $this->request('post', '/v1/invoiceitems', $params, $opts);
-    }
-
-    /**
-     * Deletes an invoice item, removing it from an invoice. Deleting invoice items is
-     * only possible when they’re not attached to invoices, or if it’s attached to a
-     * draft invoice.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\InvoiceItem
-     */
-    public function delete($id, $params = null, $opts = null)
-    {
-        return $this->request('delete', $this->buildPath('/v1/invoiceitems/%s', $id), $params, $opts);
-    }
-
-    /**
-     * Retrieves the invoice item with the given ID.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\InvoiceItem
-     */
-    public function retrieve($id, $params = null, $opts = null)
-    {
-        return $this->request('get', $this->buildPath('/v1/invoiceitems/%s', $id), $params, $opts);
-    }
-
-    /**
-     * Updates the amount or description of an invoice item on an upcoming invoice.
-     * Updating an invoice item is only possible before the invoice it’s attached to is
-     * closed.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\InvoiceItem
-     */
-    public function update($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/invoiceitems/%s', $id), $params, $opts);
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\InvoiceItemService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\InvoiceItemService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">360800</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\InvoiceItemService.php" bgcolor="#eeeeec">...\InvoiceItemService.php<b>:</b>0</td>
+</tr>
+</table></font>

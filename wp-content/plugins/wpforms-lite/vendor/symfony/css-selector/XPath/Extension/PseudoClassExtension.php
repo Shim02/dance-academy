@@ -1,150 +1,24 @@
-<?php
-
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Symfony\Component\CssSelector\XPath\Extension;
-
-use Symfony\Component\CssSelector\Exception\ExpressionErrorException;
-use Symfony\Component\CssSelector\XPath\XPathExpr;
-
-/**
- * XPath expression translator pseudo-class extension.
- *
- * This component is a port of the Python cssselect library,
- * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
- *
- * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- *
- * @internal
- */
-class PseudoClassExtension extends AbstractExtension
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function getPseudoClassTranslators()
-    {
-        return [
-            'root' => [$this, 'translateRoot'],
-            'first-child' => [$this, 'translateFirstChild'],
-            'last-child' => [$this, 'translateLastChild'],
-            'first-of-type' => [$this, 'translateFirstOfType'],
-            'last-of-type' => [$this, 'translateLastOfType'],
-            'only-child' => [$this, 'translateOnlyChild'],
-            'only-of-type' => [$this, 'translateOnlyOfType'],
-            'empty' => [$this, 'translateEmpty'],
-        ];
-    }
-
-    /**
-     * @return XPathExpr
-     */
-    public function translateRoot(XPathExpr $xpath)
-    {
-        return $xpath->addCondition('not(parent::*)');
-    }
-
-    /**
-     * @return XPathExpr
-     */
-    public function translateFirstChild(XPathExpr $xpath)
-    {
-        return $xpath
-            ->addStarPrefix()
-            ->addNameTest()
-            ->addCondition('position() = 1');
-    }
-
-    /**
-     * @return XPathExpr
-     */
-    public function translateLastChild(XPathExpr $xpath)
-    {
-        return $xpath
-            ->addStarPrefix()
-            ->addNameTest()
-            ->addCondition('position() = last()');
-    }
-
-    /**
-     * @return XPathExpr
-     *
-     * @throws ExpressionErrorException
-     */
-    public function translateFirstOfType(XPathExpr $xpath)
-    {
-        if ('*' === $xpath->getElement()) {
-            throw new ExpressionErrorException('"*:first-of-type" is not implemented.');
-        }
-
-        return $xpath
-            ->addStarPrefix()
-            ->addCondition('position() = 1');
-    }
-
-    /**
-     * @return XPathExpr
-     *
-     * @throws ExpressionErrorException
-     */
-    public function translateLastOfType(XPathExpr $xpath)
-    {
-        if ('*' === $xpath->getElement()) {
-            throw new ExpressionErrorException('"*:last-of-type" is not implemented.');
-        }
-
-        return $xpath
-            ->addStarPrefix()
-            ->addCondition('position() = last()');
-    }
-
-    /**
-     * @return XPathExpr
-     */
-    public function translateOnlyChild(XPathExpr $xpath)
-    {
-        return $xpath
-            ->addStarPrefix()
-            ->addNameTest()
-            ->addCondition('last() = 1');
-    }
-
-    /**
-     * @return XPathExpr
-     *
-     * @throws ExpressionErrorException
-     */
-    public function translateOnlyOfType(XPathExpr $xpath)
-    {
-        $element = $xpath->getElement();
-
-        if ('*' === $element) {
-            throw new ExpressionErrorException('"*:only-of-type" is not implemented.');
-        }
-
-        return $xpath->addCondition(sprintf('count(preceding-sibling::%s)=0 and count(following-sibling::%s)=0', $element, $element));
-    }
-
-    /**
-     * @return XPathExpr
-     */
-    public function translateEmpty(XPathExpr $xpath)
-    {
-        return $xpath->addCondition('not(*) and not(string-length())');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return 'pseudo-class';
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Symfony\Component\CssSelector\XPath\Extension\AbstractExtension" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\symfony\css-selector\XPath\Extension\PseudoClassExtension.php on line <i>27</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Symfony\Component\CssSelector\XPath\Extension\AbstractExtension" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\symfony\css-selector\XPath\Extension\PseudoClassExtension.php on line <i>27</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0004</td>
+<td bgcolor="#eeeeec" align="right">361216</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\symfony\css-selector\XPath\Extension\PseudoClassExtension.php" bgcolor="#eeeeec">...\PseudoClassExtension.php<b>:</b>0</td>
+</tr>
+</table></font>

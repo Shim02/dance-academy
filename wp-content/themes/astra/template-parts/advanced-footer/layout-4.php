@@ -1,51 +1,24 @@
-<?php
-/**
- * Footer Layout 4
- *
- * @package Astra
- * @since   Astra 1.0.12
- */
-
-/**
- * Hide advanced footer markup if:
- *
- * - User is not logged in. [AND]
- * - All widgets are not active.
- */
-if ( ! is_user_logged_in() ) {
-	if (
-		! is_active_sidebar( 'advanced-footer-widget-1' ) &&
-		! is_active_sidebar( 'advanced-footer-widget-2' ) &&
-		! is_active_sidebar( 'advanced-footer-widget-3' ) &&
-		! is_active_sidebar( 'advanced-footer-widget-4' )
-	) {
-		return;
-	}
-}
-
-$astra_footer_classes   = array();
-$astra_footer_classes[] = 'footer-adv';
-$astra_footer_classes[] = 'footer-adv-layout-4';
-$astra_footer_classes   = implode( ' ', $astra_footer_classes );
-?>
-
-<div class="<?php echo esc_attr( $astra_footer_classes ); ?>">
-	<div class="footer-adv-overlay">
-		<div class="ast-container">
-			<div class="ast-row">
-				<div class="<?php echo astra_attr( 'ast-layout-4-grid' ); ?> footer-adv-widget footer-adv-widget-1" <?php echo wp_kses_post( apply_filters( 'astra_sidebar_data_attrs', '', 'advanced-footer-widget-1' ) ); ?>>
-					<?php astra_get_footer_widget( 'advanced-footer-widget-1' ); ?>
-				</div>
-				<div class="<?php echo astra_attr( 'ast-layout-4-grid' ); ?> footer-adv-widget footer-adv-widget-2" <?php echo wp_kses_post( apply_filters( 'astra_sidebar_data_attrs', '', 'advanced-footer-widget-2' ) ); ?>>
-					<?php astra_get_footer_widget( 'advanced-footer-widget-2' ); ?>
-				</div>
-				<div class="<?php echo astra_attr( 'ast-layout-4-grid' ); ?> footer-adv-widget footer-adv-widget-3" <?php echo wp_kses_post( apply_filters( 'astra_sidebar_data_attrs', '', 'advanced-footer-widget-3' ) ); ?>>
-					<?php astra_get_footer_widget( 'advanced-footer-widget-3' ); ?>
-				</div>
-				<div class="<?php echo astra_attr( 'ast-layout-4-grid' ); ?> footer-adv-widget footer-adv-widget-4" <?php echo wp_kses_post( apply_filters( 'astra_sidebar_data_attrs', '', 'advanced-footer-widget-4' ) ); ?>>
-					<?php astra_get_footer_widget( 'advanced-footer-widget-4' ); ?>
-				</div>
-			</div><!-- .ast-row -->
-		</div><!-- .ast-container -->
-	</div><!-- .footer-adv-overlay-->
-</div><!-- .ast-theme-footer .footer-adv-layout-4 -->
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function is_user_logged_in() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\advanced-footer\layout-4.php on line <i>15</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function is_user_logged_in() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\advanced-footer\layout-4.php on line <i>15</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0006</td>
+<td bgcolor="#eeeeec" align="right">360912</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\advanced-footer\layout-4.php" bgcolor="#eeeeec">...\layout-4.php<b>:</b>0</td>
+</tr>
+</table></font>

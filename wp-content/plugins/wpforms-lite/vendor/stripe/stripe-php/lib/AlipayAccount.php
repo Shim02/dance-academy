@@ -1,75 +1,24 @@
-<?php
-
-namespace Stripe;
-
-/**
- * Class AlipayAccount.
- *
- * @deprecated Alipay accounts are deprecated. Please use the sources API instead.
- * @see https://stripe.com/docs/sources/alipay
- */
-class AlipayAccount extends ApiResource
-{
-    const OBJECT_NAME = 'alipay_account';
-
-    use ApiOperations\Delete;
-    use ApiOperations\Update;
-
-    /**
-     * @return string The instance URL for this resource. It needs to be special
-     *    cased because it doesn't fit into the standard resource pattern.
-     */
-    public function instanceUrl()
-    {
-        if ($this['customer']) {
-            $base = Customer::classUrl();
-            $parent = $this['customer'];
-            $path = 'sources';
-        } else {
-            $msg = 'Alipay accounts cannot be accessed without a customer ID.';
-
-            throw new Exception\UnexpectedValueException($msg);
-        }
-        $parentExtn = \urlencode(Util\Util::utf8($parent));
-        $extn = \urlencode(Util\Util::utf8($this['id']));
-
-        return "{$base}/{$parentExtn}/{$path}/{$extn}";
-    }
-
-    /**
-     * @param array|string $_id
-     * @param null|array|string $_opts
-     *
-     * @throws \Stripe\Exception\BadMethodCallException
-     *
-     * @deprecated Alipay accounts are deprecated. Please use the sources API instead.
-     * @see https://stripe.com/docs/sources/alipay
-     */
-    public static function retrieve($_id, $_opts = null)
-    {
-        $msg = 'Alipay accounts cannot be retrieved without a customer ID. ' .
-               'Retrieve an Alipay account using `Customer::retrieveSource(' .
-               "'customer_id', 'alipay_account_id')`.";
-
-        throw new Exception\BadMethodCallException($msg);
-    }
-
-    /**
-     * @param string $_id
-     * @param null|array $_params
-     * @param null|array|string $_options
-     *
-     * @throws \Stripe\Exception\BadMethodCallException
-     *
-     * @deprecated Alipay accounts are deprecated. Please use the sources API instead.
-     * @see https://stripe.com/docs/sources/alipay
-     */
-    public static function update($_id, $_params = null, $_options = null)
-    {
-        $msg = 'Alipay accounts cannot be updated without a customer ID. ' .
-               'Update an Alipay account using `Customer::updateSource(' .
-               "'customer_id', 'alipay_account_id', \$updateParams)`.";
-
-        throw new Exception\BadMethodCallException($msg);
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\AlipayAccount.php on line <i>11</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\AlipayAccount.php on line <i>11</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0005</td>
+<td bgcolor="#eeeeec" align="right">361000</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\AlipayAccount.php" bgcolor="#eeeeec">...\AlipayAccount.php<b>:</b>0</td>
+</tr>
+</table></font>

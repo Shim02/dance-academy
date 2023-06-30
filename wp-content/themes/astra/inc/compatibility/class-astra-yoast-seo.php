@@ -1,38 +1,31 @@
-<?php
-/**
- * Yoast SEO Compatibility File.
- *
- * @package Astra
- */
-
-/**
- * Astra Yoast SEO Compatibility
- *
- * @since 2.1.2
- */
-class Astra_Yoast_SEO {
-
-	/**
-	 * Constructor
-	 */
-	public function __construct() {
-		add_filter( 'wpseo_sitemap_exclude_post_type', array( $this, 'sitemap_exclude_post_type' ), 10, 2 );
-	}
-
-	/**
-	 * Exclude One Content Type From Yoast SEO Sitemap
-	 *
-	 * @param  string $value value.
-	 * @param  string $post_type Post Type.
-	 * @since 2.1.2
-	 */
-	public function sitemap_exclude_post_type( $value, $post_type ) {
-		return 'astra-advanced-hook' === $post_type;
-	}
-
-}
-
-/**
- * Kicking this off by object
- */
-new Astra_Yoast_SEO();
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function add_filter() in C:\wamp64\www\dance_academy\wp-content\themes\astra\inc\compatibility\class-astra-yoast-seo.php on line <i>19</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function add_filter() in C:\wamp64\www\dance_academy\wp-content\themes\astra\inc\compatibility\class-astra-yoast-seo.php on line <i>19</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">360224</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\inc\compatibility\class-astra-yoast-seo.php" bgcolor="#eeeeec">...\class-astra-yoast-seo.php<b>:</b>0</td>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">2</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">360264</td>
+<td bgcolor="#eeeeec">Astra_Yoast_SEO->__construct(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\inc\compatibility\class-astra-yoast-seo.php" bgcolor="#eeeeec">...\class-astra-yoast-seo.php<b>:</b>38</td>
+</tr>
+</table></font>

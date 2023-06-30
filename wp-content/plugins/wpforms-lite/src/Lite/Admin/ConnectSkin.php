@@ -1,37 +1,24 @@
-<?php
-
-namespace WPForms\Lite\Admin;
-
-use WPForms\Helpers\PluginSilentUpgraderSkin;
-
-/**
- * WPForms Connect Skin.
- *
- * WPForms Connect is our service that makes it easy for non-techy users to
- * upgrade to WPForms Pro without having to manually install WPForms Pro plugin.
- *
- * @since 1.5.5
- * @since 1.5.6.1 Extend PluginSilentUpgraderSkin and clean up the class.
- */
-class ConnectSkin extends PluginSilentUpgraderSkin {
-
-	/**
-	 * Instead of outputting HTML for errors, json_encode the errors and send them
-	 * back to the Ajax script for processing.
-	 *
-	 * @since 1.5.5
-	 *
-	 * @param array $errors Array of errors with the install process.
-	 */
-	public function error( $errors ) {
-
-		if ( ! empty( $errors ) ) {
-			echo \wp_json_encode(
-				[
-					'error' => \esc_html__( 'There was an error installing WPForms Pro. Please try again.', 'wpforms-lite' ),
-				]
-			);
-			die;
-		}
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Helpers\PluginSilentUpgraderSkin" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Lite\Admin\ConnectSkin.php on line <i>16</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Helpers\PluginSilentUpgraderSkin" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Lite\Admin\ConnectSkin.php on line <i>16</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0007</td>
+<td bgcolor="#eeeeec" align="right">360768</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Lite\Admin\ConnectSkin.php" bgcolor="#eeeeec">...\ConnectSkin.php<b>:</b>0</td>
+</tr>
+</table></font>

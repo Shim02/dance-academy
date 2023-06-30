@@ -1,42 +1,24 @@
-<?php
-/**
- * Template for Blog
- *
- * @package     Astra
- * @author      Astra
- * @copyright   Copyright (c) 2020, Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
- */
-
-?>
-<div <?php astra_blog_layout_class( 'blog-layout-1' ); ?>>
-	<div class="post-content <?php echo astra_attr( 'ast-grid-common-col' ); ?>" >
-		<?php astra_blog_post_thumbnail_and_title_order(); ?>
-		<div class="entry-content clear"
-		<?php
-				echo astra_attr(
-					'article-entry-content-blog-layout',
-					array(
-						'class' => '',
-					)
-				);
-				?>
-		>
-			<?php
-				astra_entry_content_before();
-				astra_the_excerpt();
-				astra_entry_content_after();
-
-				wp_link_pages(
-					array(
-						'before'      => '<div class="page-links">' . esc_html( astra_default_strings( 'string-blog-page-links-before', false ) ),
-						'after'       => '</div>',
-						'link_before' => '<span class="page-link">',
-						'link_after'  => '</span>',
-					)
-				);
-				?>
-		</div><!-- .entry-content .clear -->
-	</div><!-- .post-content -->
-</div> <!-- .blog-layout-1 -->
+<div></div>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function astra_blog_layout_class() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\blog\blog-layout.php on line <i>13</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function astra_blog_layout_class() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\blog\blog-layout.php on line <i>13</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360192</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\blog\blog-layout.php" bgcolor="#eeeeec">...\blog-layout.php<b>:</b>0</td>
+</tr>
+</table></font>

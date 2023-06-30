@@ -1,30 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe;
-
-/**
- * Stripe needs to collect certain pieces of information about each account
- * created. These requirements can differ depending on the account's country. The
- * Country Specs API makes these rules available to your integration.
- *
- * You can also view the information from this API call as <a
- * href="/docs/connect/required-verification-information">an online guide</a>.
- *
- * @property string $id Unique identifier for the object. Represented as the ISO country code for this country.
- * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property string $default_currency The default currency for this country. This applies to both payment methods and bank accounts.
- * @property \Stripe\StripeObject $supported_bank_account_currencies Currencies that can be accepted in the specific country (for transfers).
- * @property string[] $supported_payment_currencies Currencies that can be accepted in the specified country (for payments).
- * @property string[] $supported_payment_methods Payment methods available in the specified country. You may need to enable some payment methods (e.g., <a href="https://stripe.com/docs/ach">ACH</a>) on your account before they appear in this list. The <code>stripe</code> payment method refers to <a href="https://stripe.com/docs/connect/destination-charges">charging through your platform</a>.
- * @property string[] $supported_transfer_countries Countries that can accept transfers from the specified country.
- * @property \Stripe\StripeObject $verification_fields
- */
-class CountrySpec extends ApiResource
-{
-    const OBJECT_NAME = 'country_spec';
-
-    use ApiOperations\All;
-    use ApiOperations\Retrieve;
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\CountrySpec.php on line <i>24</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\CountrySpec.php on line <i>24</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360680</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\CountrySpec.php" bgcolor="#eeeeec">...\CountrySpec.php<b>:</b>0</td>
+</tr>
+</table></font>

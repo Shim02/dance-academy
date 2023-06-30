@@ -1,90 +1,24 @@
-<?php
-
-/**
- * Class ActionScheduler_LoggerSchema
- *
- * @codeCoverageIgnore
- *
- * Creates a custom table for storing action logs
- */
-class ActionScheduler_LoggerSchema extends ActionScheduler_Abstract_Schema {
-	const LOG_TABLE = 'actionscheduler_logs';
-
-	/**
-	 * @var int Increment this value to trigger a schema update.
-	 */
-	protected $schema_version = 3;
-
-	public function __construct() {
-		$this->tables = [
-			self::LOG_TABLE,
-		];
-	}
-
-	/**
-	 * Performs additional setup work required to support this schema.
-	 */
-	public function init() {
-		add_action( 'action_scheduler_before_schema_update', array( $this, 'update_schema_3_0' ), 10, 2 );
-	}
-
-	protected function get_table_definition( $table ) {
-		global $wpdb;
-		$table_name       = $wpdb->$table;
-		$charset_collate  = $wpdb->get_charset_collate();
-		switch ( $table ) {
-
-			case self::LOG_TABLE:
-
-				$default_date = ActionScheduler_StoreSchema::DEFAULT_DATE;
-				return "CREATE TABLE {$table_name} (
-				        log_id bigint(20) unsigned NOT NULL auto_increment,
-				        action_id bigint(20) unsigned NOT NULL,
-				        message text NOT NULL,
-				        log_date_gmt datetime NULL default '${default_date}',
-				        log_date_local datetime NULL default '${default_date}',
-				        PRIMARY KEY  (log_id),
-				        KEY action_id (action_id),
-				        KEY log_date_gmt (log_date_gmt)
-				        ) $charset_collate";
-
-			default:
-				return '';
-		}
-	}
-
-	/**
-	 * Update the logs table schema, allowing datetime fields to be NULL.
-	 *
-	 * This is needed because the NOT NULL constraint causes a conflict with some versions of MySQL
-	 * configured with sql_mode=NO_ZERO_DATE, which can for instance lead to tables not being created.
-	 *
-	 * Most other schema updates happen via ActionScheduler_Abstract_Schema::update_table(), however
-	 * that method relies on dbDelta() and this change is not possible when using that function.
-	 *
-	 * @param string $table Name of table being updated.
-	 * @param string $db_version The existing schema version of the table.
-	 */
-	public function update_schema_3_0( $table, $db_version ) {
-		global $wpdb;
-
-		if ( 'actionscheduler_logs' !== $table || version_compare( $db_version, '3', '>=' ) ) {
-			return;
-		}
-
-		// phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-		$table_name   = $wpdb->prefix . 'actionscheduler_logs';
-		$table_list   = $wpdb->get_col( "SHOW TABLES LIKE '${table_name}'" );
-		$default_date = ActionScheduler_StoreSchema::DEFAULT_DATE;
-
-		if ( ! empty( $table_list ) ) {
-			$query = "
-				ALTER TABLE ${table_name}
-				MODIFY COLUMN log_date_gmt datetime NULL default '${default_date}',
-				MODIFY COLUMN log_date_local datetime NULL default '${default_date}'
-			";
-			$wpdb->query( $query ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
-		}
-		// phpcs:enable WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "ActionScheduler_Abstract_Schema" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\schema\ActionScheduler_LoggerSchema.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "ActionScheduler_Abstract_Schema" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\schema\ActionScheduler_LoggerSchema.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">361616</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\schema\ActionScheduler_LoggerSchema.php" bgcolor="#eeeeec">...\ActionScheduler_LoggerSchema.php<b>:</b>0</td>
+</tr>
+</table></font>

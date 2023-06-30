@@ -1,124 +1,24 @@
-<?php
-
-namespace Elementor\App\Modules\ImportExport\Runners\Import;
-
-use Elementor\App\Modules\ImportExport\Utils as ImportExportUtils;
-use Elementor\Core\Utils\ImportExport\WP_Import;
-
-class Wp_Content extends Import_Runner_Base {
-
-	private $import_session_id;
-
-	/**
-	 * @var array
-	 */
-	private $selected_custom_post_types = [];
-
-	public static function get_name() : string {
-		return 'wp-content';
-	}
-
-	public function should_import( array $data ) {
-		return (
-			isset( $data['include'] ) &&
-			in_array( 'content', $data['include'], true ) &&
-			! empty( $data['extracted_directory_path'] ) &&
-			! empty( $data['manifest']['wp-content'] )
-		);
-	}
-
-	public function import( array $data, array $imported_data ) {
-		$this->import_session_id = $data['session_id'];
-
-		$path = $data['extracted_directory_path'] . 'wp-content/';
-
-		$post_types = $this->filter_post_types( $data['selected_custom_post_types'] );
-
-		$taxonomies = $imported_data['taxonomies'] ?? [];
-		$imported_terms = ImportExportUtils::map_old_new_term_ids( $imported_data );
-
-		$result['wp-content'] = [];
-
-		foreach ( $post_types as $post_type ) {
-			$import = $this->import_wp_post_type(
-				$path,
-				$post_type,
-				$imported_data,
-				$taxonomies,
-				$imported_terms
-			);
-
-			if ( empty( $import ) ) {
-				continue;
-			}
-
-			$result['wp-content'][ $post_type ] = $import;
-			$imported_data = array_merge( $imported_data, $result );
-		}
-
-		return $result;
-	}
-
-	private function import_wp_post_type( $path, $post_type, array $imported_data, array $taxonomies, array $imported_terms ) {
-		$args = [
-			'fetch_attachments' => true,
-			'posts' => ImportExportUtils::map_old_new_post_ids( $imported_data ),
-			'terms' => $imported_terms,
-			'taxonomies' => ! empty( $taxonomies[ $post_type ] ) ? $taxonomies[ $post_type ] : [],
-			'posts_meta' => [
-				static::META_KEY_ELEMENTOR_IMPORT_SESSION_ID => $this->import_session_id,
-			],
-			'terms_meta' => [
-				static::META_KEY_ELEMENTOR_IMPORT_SESSION_ID => $this->import_session_id,
-			],
-		];
-
-		$file = $path . $post_type . '/' . $post_type . '.xml';
-
-		if ( ! file_exists( $file ) ) {
-			return [];
-		}
-
-		$wp_importer = new WP_Import( $file, $args );
-		$result = $wp_importer->run();
-
-		return $result['summary']['posts'];
-	}
-
-	private function filter_post_types( $selected_custom_post_types = [] ) {
-		$wp_builtin_post_types = ImportExportUtils::get_builtin_wp_post_types();
-
-		foreach ( $selected_custom_post_types as $custom_post_type ) {
-			if ( post_type_exists( $custom_post_type ) ) {
-				$this->selected_custom_post_types[] = $custom_post_type;
-			}
-		}
-
-		$post_types = array_merge( $wp_builtin_post_types, $this->selected_custom_post_types );
-		$post_types = $this->force_element_to_be_last_by_value( $post_types, 'nav_menu_item' );
-
-		return $post_types;
-	}
-
-	public function get_import_session_metadata() : array {
-		return [
-			'custom_post_types' => $this->selected_custom_post_types,
-		];
-	}
-
-	/**
-	 * @param $array array The array we want to relocate his element.
-	 * @param $element mixed The value of the element in the array we want to shift to end of the array.
-	 * @return mixed
-	 */
-	private function force_element_to_be_last_by_value( array $array, $element ) {
-		$index = array_search( $element, $array, true );
-
-		if ( false !== $index ) {
-			unset( $array[ $index ] );
-			$array[] = $element;
-		}
-
-		return $array;
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Elementor\App\Modules\ImportExport\Runners\Import\Import_Runner_Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\import\wp-content.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Elementor\App\Modules\ImportExport\Runners\Import\Import_Runner_Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\import\wp-content.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0013</td>
+<td bgcolor="#eeeeec" align="right">361888</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\import\wp-content.php" bgcolor="#eeeeec">...\wp-content.php<b>:</b>0</td>
+</tr>
+</table></font>

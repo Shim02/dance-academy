@@ -1,106 +1,24 @@
-<?php
-
-namespace WPForms\Admin\Education;
-
-/**
- * Base class for all "addon item" type Education features.
- *
- * @since 1.6.6
- */
-abstract class AddonsItemBase implements EducationInterface {
-
-	/**
-	 * Instance of the Education\Core class.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @var \WPForms\Admin\Education\Core
-	 */
-	protected $education;
-
-	/**
-	 * Instance of the Education\Addons class.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @var \WPForms\Admin\Addons\Addons
-	 */
-	protected $addons;
-
-	/**
-	 * Template name for rendering single addon item.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @var string
-	 */
-	protected $single_addon_template;
-
-	/**
-	 * Indicate if current Education feature is allowed to load.
-	 * Should be called from the child feature class.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return bool
-	 */
-	abstract public function allow_load();
-
-	/**
-	 * Init.
-	 *
-	 * @since 1.6.6
-	 */
-	public function init() {
-
-		if ( ! $this->allow_load() ) {
-			return;
-		}
-
-		// Store the instance of the Education core class.
-		$this->education = wpforms()->get( 'education' );
-
-		// Store the instance of the Education\Addons class.
-		$this->addons = wpforms()->get( 'addons' );
-
-		// Define hooks.
-		$this->hooks();
-	}
-
-	/**
-	 * Hooks.
-	 *
-	 * @since 1.6.6
-	 */
-	abstract public function hooks();
-
-	/**
-	 * Display single addon item.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @param array $addon Addon data.
-	 */
-	protected function display_single_addon( $addon ) {
-
-		/**
-		 * Filter to disallow addons to be displayed in the Education feature.
-		 *
-		 * @since 1.8.2
-		 *
-		 * @param bool   $display Whether to hide the addon.
-		 * @param array  $slug    Addon data.
-		 */
-		$is_disallowed = (bool) apply_filters( 'wpforms_admin_education_addons_item_base_display_single_addon_hide', false, $addon );
-
-		if ( empty( $addon ) || $is_disallowed ) {
-			return;
-		}
-
-		echo wpforms_render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			$this->single_addon_template,
-			$addon,
-			true
-		);
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Interface "WPForms\Admin\Education\EducationInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\AddonsItemBase.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Interface "WPForms\Admin\Education\EducationInterface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\AddonsItemBase.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0007</td>
+<td bgcolor="#eeeeec" align="right">360920</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\AddonsItemBase.php" bgcolor="#eeeeec">...\AddonsItemBase.php<b>:</b>0</td>
+</tr>
+</table></font>

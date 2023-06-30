@@ -1,110 +1,24 @@
-<?php
-
-namespace WPForms\Tasks\Actions;
-
-use WPForms\Tasks\Task;
-use WPForms\Tasks\Meta;
-
-/**
- * Class EntryEmailsMetaCleanupTask.
- *
- * @since 1.5.9
- */
-class EntryEmailsMetaCleanupTask extends Task {
-
-	/**
-	 * Action name for this task.
-	 *
-	 * @since 1.5.9
-	 */
-	const ACTION = 'wpforms_process_entry_emails_meta_cleanup';
-
-	/**
-	 * Class constructor.
-	 *
-	 * @since 1.5.9
-	 */
-	public function __construct() {
-
-		parent::__construct( self::ACTION );
-
-		$this->init();
-	}
-
-	/**
-	 * Initialize the task with all the proper checks.
-	 *
-	 * @since 1.5.9
-	 */
-	public function init() {
-
-		// Register the action handler.
-		$this->hooks();
-
-		$tasks = wpforms()->get( 'tasks' );
-
-		$email_async = wpforms_setting( 'email-async' );
-
-		// Add new if none exists.
-		if ( $tasks->is_scheduled( self::ACTION ) !== false ) {
-			// Cancel scheduled action if email async option is not set.
-			if ( ! $email_async ) {
-				$this->cancel();
-			}
-
-			return;
-		}
-
-		// Do not schedule action if email async option is not set.
-		if ( ! $email_async ) {
-			return;
-		}
-
-		// phpcs:disable WPForms.PHP.ValidateHooks.InvalidHookName
-		/**
-		 * Filters the email cleanup task interval.
-		 *
-		 * @since 1.5.9
-		 *
-		 * @param int $interval Interval in seconds.
-		 */
-		$interval = (int) apply_filters( 'wpforms_tasks_entry_emails_meta_cleanup_interval', DAY_IN_SECONDS );
-		// phpcs:enable WPForms.PHP.ValidateHooks.InvalidHookName
-
-		$this->recurring( strtotime( 'tomorrow' ), $interval )
-		     ->params( $interval )
-		     ->register();
-	}
-
-	/**
-	 * Add hooks.
-	 *
-	 * @since 1.7.3
-	 */
-	private function hooks() {
-
-		add_action( self::ACTION, [ $this, 'process' ] );
-	}
-
-	/**
-	 * Perform the cleanup action: remove outdated meta for entry emails task.
-	 *
-	 * @since 1.5.9
-	 *
-	 * @param int $meta_id ID for meta information for a task.
-	 */
-	public function process( $meta_id ) {
-
-		$task_meta = new Meta();
-		$meta      = $task_meta->get( (int) $meta_id );
-
-		// We should actually receive something.
-		if ( empty( $meta ) || empty( $meta->data ) ) {
-			return;
-		}
-
-		list( $interval ) = $meta->data;
-
-		$task_meta->clean_by( EntryEmailsTask::ACTION, (int) $interval );
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Tasks\Task" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Tasks\Actions\EntryEmailsMetaCleanupTask.php on line <i>13</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Tasks\Task" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Tasks\Actions\EntryEmailsMetaCleanupTask.php on line <i>13</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">360992</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Tasks\Actions\EntryEmailsMetaCleanupTask.php" bgcolor="#eeeeec">...\EntryEmailsMetaCleanupTask.php<b>:</b>0</td>
+</tr>
+</table></font>

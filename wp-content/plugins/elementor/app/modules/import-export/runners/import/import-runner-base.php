@@ -1,39 +1,24 @@
-<?php
-
-namespace Elementor\App\Modules\ImportExport\Runners\Import;
-
-use Elementor\App\Modules\ImportExport\Runners\Runner_Interface;
-
-abstract class Import_Runner_Base implements Runner_Interface {
-
-	/**
-	 * By the passed data we should decide if we want to run the import function of the runner or not.
-	 *
-	 * @param array $data
-	 *
-	 * @return bool
-	 */
-	abstract public function should_import( array $data );
-
-	/**
-	 * Main function of the runner import process.
-	 *
-	 * @param array $data Necessary data for the import process.
-	 * @param array $imported_data Data that already imported by previously runners.
-	 *
-	 * @return array The result of the import process
-	 */
-	abstract public function import( array $data, array $imported_data );
-
-	public function get_import_session_metadata() : array {
-		return [];
-	}
-
-	public function set_session_post_meta( $post_id, $meta_value ) {
-		update_post_meta( $post_id, static::META_KEY_ELEMENTOR_IMPORT_SESSION_ID, $meta_value );
-	}
-
-	public function set_session_term_meta( $term_id, $meta_value ) {
-		update_term_meta( $term_id, static::META_KEY_ELEMENTOR_IMPORT_SESSION_ID, $meta_value );
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Interface "Elementor\App\Modules\ImportExport\Runners\Runner_Interface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\import\import-runner-base.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Interface "Elementor\App\Modules\ImportExport\Runners\Runner_Interface" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\import\import-runner-base.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0111</td>
+<td bgcolor="#eeeeec" align="right">361160</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\import\import-runner-base.php" bgcolor="#eeeeec">...\import-runner-base.php<b>:</b>0</td>
+</tr>
+</table></font>

@@ -1,69 +1,24 @@
-<?php
-
-namespace WPForms\Admin\Education\Builder;
-
-use \WPForms\Admin\Education;
-
-/**
- * Builder/Settings Education feature.
- *
- * @since 1.6.6
- */
-class Settings extends Education\Builder\Panel {
-
-	/**
-	 * Panel slug.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return string
-	 **/
-	protected function get_name() {
-
-		return 'settings';
-	}
-
-	/**
-	 * Hooks.
-	 *
-	 * @since 1.6.6
-	 */
-	public function hooks() {
-
-		add_filter( 'wpforms_builder_settings_sections', [ $this, 'filter_addons' ], 1 );
-		add_action( 'wpforms_builder_after_panel_sidebar', [ $this, 'display' ], 100, 2 );
-	}
-
-	/**
-	 * Display settings addons.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @param object $form  Current form.
-	 * @param string $panel Panel slug.
-	 */
-	public function display( $form, $panel ) {
-
-		if ( empty( $form ) || $this->get_name() !== $panel ) {
-			return;
-		}
-
-		$this->display_addons();
-	}
-
-	/**
-	 * Ensure that we do not display activated addon items if those addons are not allowed according to the current license.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @param array $sections Settings sections.
-	 *
-	 * @return array
-	 */
-	public function filter_addons( $sections ) {
-
-		$this->filter_not_allowed_addons( 'wpforms_builder_settings_sections' );
-
-		return $sections;
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Admin\Education\Builder\Panel" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Builder\Settings.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Admin\Education\Builder\Panel" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Builder\Settings.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360560</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Builder\Settings.php" bgcolor="#eeeeec">...\Settings.php<b>:</b>0</td>
+</tr>
+</table></font>

@@ -1,43 +1,24 @@
-<?php
-
-/**
- * Blank form template.
- *
- * @since 1.0.0
- */
-class WPForms_Template_Blank extends WPForms_Template {
-
-	/**
-	 * Primary class constructor.
-	 *
-	 * @since 1.0.0
-	 */
-	public function init() {
-
-		$this->priority    = 1;
-		$this->name        = esc_html__( 'Blank Form', 'wpforms-lite' );
-		$this->slug        = 'blank';
-		$this->source      = 'wpforms-core';
-		$this->categories  = 'all';
-		$this->description = esc_html__( 'The blank form allows you to create any type of form using our drag & drop builder.', 'wpforms-lite' );
-		$this->includes    = '';
-		$this->icon        = '';
-		$this->modal       = '';
-		$this->core        = true;
-		$this->data        = [
-			'field_id' => '1',
-			'fields'   => [],
-			'settings' => [
-				'antispam'                    => '1',
-				'ajax_submit'                 => '1',
-				'confirmation_message_scroll' => '1',
-				'submit_text_processing'      => esc_html__( 'Sending...', 'wpforms-lite' ),
-			],
-			'meta'     => [
-				'template' => $this->slug,
-			],
-		];
-	}
-}
-
-new WPForms_Template_Blank();
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms_Template" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\includes\templates\class-blank.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms_Template" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\includes\templates\class-blank.php on line <i>8</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360552</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\includes\templates\class-blank.php" bgcolor="#eeeeec">...\class-blank.php<b>:</b>0</td>
+</tr>
+</table></font>

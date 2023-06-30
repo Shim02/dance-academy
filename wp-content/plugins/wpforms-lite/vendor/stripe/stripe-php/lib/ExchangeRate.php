@@ -1,30 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe;
-
-/**
- * <code>Exchange Rate</code> objects allow you to determine the rates that Stripe
- * is currently using to convert from one currency to another. Since this number is
- * variable throughout the day, there are various reasons why you might want to
- * know the current rate (for example, to dynamically price an item for a user with
- * a default payment in a foreign currency).
- *
- * If you want a guarantee that the charge is made with a certain exchange rate you
- * expect is current, you can pass in <code>exchange_rate</code> to charges
- * endpoints. If the value is no longer up to date, the charge won't go through.
- * Please refer to our <a href="https://stripe.com/docs/exchange-rates">Exchange
- * Rates API</a> guide for more details.
- *
- * @property string $id Unique identifier for the object. Represented as the three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a> in lowercase.
- * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property \Stripe\StripeObject $rates Hash where the keys are supported currencies and the values are the exchange rate at which the base id currency converts to the key currency.
- */
-class ExchangeRate extends ApiResource
-{
-    const OBJECT_NAME = 'exchange_rate';
-
-    use ApiOperations\All;
-    use ApiOperations\Retrieve;
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\ExchangeRate.php on line <i>24</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\ExchangeRate.php on line <i>24</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0004</td>
+<td bgcolor="#eeeeec" align="right">360680</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\ExchangeRate.php" bgcolor="#eeeeec">...\ExchangeRate.php<b>:</b>0</td>
+</tr>
+</table></font>

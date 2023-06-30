@@ -1,96 +1,24 @@
-<?php
-
-namespace WPForms\Admin\Addons;
-
-use WPForms\Helpers\CacheBase;
-
-/**
- * Addons cache handler.
- *
- * @since 1.6.6
- */
-class AddonsCache extends CacheBase {
-
-	/**
-	 * Determine if the class is allowed to load.
-	 *
-	 * @since 1.6.8
-	 *
-	 * @return bool
-	 */
-	protected function allow_load() {
-
-		if ( wp_doing_cron() || wpforms_doing_wp_cli() ) {
-			return true;
-		}
-
-		$has_permissions  = wpforms_current_user_can( [ 'create_forms', 'edit_forms' ] );
-		$allowed_requests = wpforms_is_admin_ajax() || wpforms_is_admin_page() || wpforms_is_admin_page( 'builder' );
-
-		return $has_permissions && $allowed_requests;
-	}
-
-	/**
-	 * Provide settings.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return array Settings array.
-	 */
-	protected function setup() {
-
-		return [
-
-			// Remote source URL.
-			'remote_source' => 'https://wpforms.com/wp-content/addons.json',
-
-			// Addons cache file name.
-			'cache_file'    => 'addons.json',
-
-			/**
-			 * Time-to-live of the addons cache file in seconds.
-			 *
-			 * This applies to `uploads/wpforms/cache/addons.json` file.
-			 *
-			 * @since 1.6.8
-			 *
-			 * @param integer $cache_ttl Cache time-to-live, in seconds.
-			 *                           Default value: WEEK_IN_SECONDS.
-			 */
-			'cache_ttl'     => (int) apply_filters( 'wpforms_admin_addons_cache_ttl', WEEK_IN_SECONDS ),
-
-			// Scheduled update action.
-			'update_action' => 'wpforms_admin_addons_cache_update',
-		];
-	}
-
-	/**
-	 * Prepare addons data to store in a local cache -
-	 * generate addons icon image file name for further use.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @param array $data Raw addons data.
-	 *
-	 * @return array Prepared data for caching (with icons).
-	 */
-	protected function prepare_cache_data( $data ) {
-
-		if ( empty( $data ) || ! is_array( $data ) ) {
-			return [];
-		}
-
-		$addons_cache = [];
-
-		foreach ( $data as $addon ) {
-
-			// Addon icon.
-			$addon['icon'] = str_replace( 'wpforms-', 'addon-icon-', $addon['slug'] ) . '.png';
-
-			// Use slug as a key for further usage.
-			$addons_cache[ $addon['slug'] ] = $addon;
-		}
-
-		return $addons_cache;
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Helpers\CacheBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Addons\AddonsCache.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Helpers\CacheBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Addons\AddonsCache.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360480</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Addons\AddonsCache.php" bgcolor="#eeeeec">...\AddonsCache.php<b>:</b>0</td>
+</tr>
+</table></font>

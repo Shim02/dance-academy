@@ -1,57 +1,24 @@
-<?php
-/**
- * Register customizer Aspra Pro Section.
- *
- * @package   Astra
- * @author    Astra
- * @copyright Copyright (c) 2020, Astra
- * @link      https://wpastra.com/
- * @since     Astra 1.0.10
- */
-
-if ( ! class_exists( 'Astra_Pro_Upgrade_Link_Configs' ) ) {
-
-	/**
-	 * Register Button Customizer Configurations.
-	 */
-	class Astra_Pro_Upgrade_Link_Configs extends Astra_Customizer_Config_Base {
-
-		/**
-		 * Register Button Customizer Configurations.
-		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
-		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
-		 */
-		public function register_configuration( $configurations, $wp_customize ) {
-
-			$_configs = array(
-				array(
-					'name'             => 'astra-pro',
-					'type'             => 'section',
-					'ast_type'         => 'astra-pro',
-					'title'            => esc_html__( 'More Options Available in Astra Pro!', 'astra' ),
-					'pro_url'          => htmlspecialchars_decode( astra_get_pro_url( 'https://wpastra.com/pricing/', 'customizer', 'free-theme', 'main-cta' ) ),
-					'priority'         => 1,
-					'section_callback' => 'Astra_Pro_Customizer',
-				),
-
-				array(
-					'name'      => ASTRA_THEME_SETTINGS . '[astra-pro-section-notice]',
-					'type'      => 'control',
-					'transport' => 'postMessage',
-					'control'   => 'ast-hidden',
-					'section'   => 'astra-pro',
-					'priority'  => 0,
-				),
-
-			);
-
-			return array_merge( $configurations, $_configs );
-
-		}
-	}
-}
-
-new Astra_Pro_Upgrade_Link_Configs();
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Astra_Customizer_Config_Base" not found in C:\wamp64\www\dance_academy\wp-content\themes\astra\inc\customizer\astra-pro\class-astra-pro-upgrade-link-configs.php on line <i>17</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Astra_Customizer_Config_Base" not found in C:\wamp64\www\dance_academy\wp-content\themes\astra\inc\customizer\astra-pro\class-astra-pro-upgrade-link-configs.php on line <i>17</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0310</td>
+<td bgcolor="#eeeeec" align="right">361128</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\inc\customizer\astra-pro\class-astra-pro-upgrade-link-configs.php" bgcolor="#eeeeec">...\class-astra-pro-upgrade-link-configs.php<b>:</b>0</td>
+</tr>
+</table></font>

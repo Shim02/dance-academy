@@ -1,67 +1,24 @@
-<?php
-
-namespace WPForms\Admin\Education\Admin\Settings;
-
-use \WPForms\Admin\Education\AddonsListBase;
-
-/**
- * Base class for Admin/Integrations feature for Lite and Pro.
- *
- * @since 1.6.6
- */
-class Integrations extends AddonsListBase {
-
-	/**
-	 * Template for rendering single addon item.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @var string
-	 */
-	protected $single_addon_template = 'education/admin/settings/integrations-item';
-
-	/**
-	 * Hooks.
-	 *
-	 * @since 1.6.6
-	 */
-	public function hooks() {
-
-		add_action( 'wpforms_settings_providers', [ $this, 'filter_addons' ], 1 );
-		add_action( 'wpforms_settings_providers', [ $this, 'display_addons' ], 500 );
-	}
-
-	/**
-	 * Indicate if current Education feature is allowed to load.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return bool
-	 */
-	public function allow_load() {
-
-		return wpforms_is_admin_page( 'settings', 'integrations' );
-	}
-
-	/**
-	 * Get addons for the Settings/Integrations tab.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return array Addons data.
-	 */
-	protected function get_addons() {
-
-		return $this->addons->get_by_category( 'providers' );
-	}
-
-	/**
-	 * Ensure that we do not display activated addon items if those addons are not allowed according to the current license.
-	 *
-	 * @since 1.6.6
-	 */
-	public function filter_addons() {
-
-		$this->filter_not_allowed_addons( 'wpforms_settings_providers' );
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Admin\Education\AddonsListBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Admin\Settings\Integrations.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Admin\Education\AddonsListBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Admin\Settings\Integrations.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0004</td>
+<td bgcolor="#eeeeec" align="right">361024</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\Admin\Settings\Integrations.php" bgcolor="#eeeeec">...\Integrations.php<b>:</b>0</td>
+</tr>
+</table></font>

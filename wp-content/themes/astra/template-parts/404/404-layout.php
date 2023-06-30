@@ -1,30 +1,24 @@
-<?php
-/**
- * Template for 404
- *
- * @package     Astra
- * @author      Astra
- * @copyright   Copyright (c) 2020, Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
- */
-
-$astra_404_subtitle_tag = ( true === astra_check_is_structural_setup() ) ? 'h3' : 'div';
-
-?>
-<div <?php echo astra_attr( '404_page', array( 'class' => 'ast-404-layout-1' ) ); ?> >
-
-	<?php astra_the_title( '<header class="page-header"><h1 class="page-title">', '</h1></header><!-- .page-header -->' ); ?>
-
-	<div class="page-content">
-
-		<<?php echo esc_attr( $astra_404_subtitle_tag ); ?> class="page-sub-title">
-			<?php echo esc_html( astra_default_strings( 'string-404-sub-title', false ) ); ?>
-		</<?php echo esc_attr( $astra_404_subtitle_tag ); ?>>
-
-		<div class="ast-404-search">
-			<?php the_widget( 'WP_Widget_Search' ); ?>
-		</div>
-
-	</div><!-- .page-content -->
-</div>
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function astra_check_is_structural_setup() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\404\404-layout.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function astra_check_is_structural_setup() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\404\404-layout.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0005</td>
+<td bgcolor="#eeeeec" align="right">360176</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\404\404-layout.php" bgcolor="#eeeeec">...\404-layout.php<b>:</b>0</td>
+</tr>
+</table></font>

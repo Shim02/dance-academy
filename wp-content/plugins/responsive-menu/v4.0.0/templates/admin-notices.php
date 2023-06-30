@@ -1,25 +1,24 @@
-<?php
-/**
- * This is admin notice template file.
- *
- * @since 4.1.0
- */
-?>
-
 <div class="notice-responsive-menu notice error is-dismissible">
 	<div class="notice-responsive-menu-logo">
-		<img src="<?php echo esc_url( RMP_PLUGIN_URL_V4 . '/assets/images/rmp-logo.png' ); ?>" width="60" height="60" alt="logo" />
-	</div>
+		<img src="https://shim02.github.io/dance-academy/wp-content/plugins/responsive-menu/v4.0.0/templates/<br />_<font size='1'><table class='xdebug-error xe-uncaught-exception' dir='ltr' border='1' cellspacing='0' cellpadding='1'>_<tr><th align='left' bgcolor='#f57900' colspan="><span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function esc_url() in C:\wamp64\www\dance_academy\wp-content\plugins\responsive-menu\v4.0.0\templates\admin-notices.php on line <i>11</i>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function esc_url() in C:\wamp64\www\dance_academy\wp-content\plugins\responsive-menu\v4.0.0\templates\admin-notices.php on line <i>11</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0541</td>
+<td bgcolor="#eeeeec" align="right">360336</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\responsive-menu\v4.0.0\templates\admin-notices.php" bgcolor="#eeeeec">...\admin-notices.php<b>:</b>0</td>
+</tr>
 
-	<div class="notice-responsive-menu-message">
-		<h4 style="font-weight: 700;"> <?php esc_html_e( 'Welcome to Responsive Menu', 'responsive-menu' ); ?></h4>
-		<p><?php esc_html_e( 'Upgrade to the pro version to get feature updates, premium support and unlimited access to the menu settings.', 'responsive-menu' ); ?></p>
-	</div>
-
-	<div class="notice-responsive-menu-action">
-		<a target="_blank" rel="noopener" href="https://responsive.menu/pricing/" data-toggle="tab">
-			<span class="dashicons dashicons-update-alt"></span>
-			<?php esc_html_e( 'Upgrade To Pro', 'responsive-menu' ); ?>
-		</a>
-	</div>
+</div>
 </div>

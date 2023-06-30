@@ -1,56 +1,24 @@
-<?php
-
-namespace WPForms\Migrations;
-
-use WPForms\Tasks\Meta;
-use WPForms\Db\Payments\Payment;
-use WPForms\Db\Payments\Meta as PaymentMeta;
-
-/**
- * Class Migrations handles Lite plugin upgrade routines.
- *
- * @since 1.7.5
- */
-class Migrations extends Base {
-
-	/**
-	 * WP option name to store the migration version.
-	 *
-	 * @since 1.5.9
-	 */
-	const MIGRATED_OPTION_NAME = 'wpforms_versions_lite';
-
-	/**
-	 * Name of the core plugin used in log messages.
-	 *
-	 * @since 1.7.5
-	 */
-	const PLUGIN_NAME = 'WPForms';
-
-	/**
-	 * Upgrade classes.
-	 *
-	 * @since 1.7.5
-	 */
-	const UPGRADE_CLASSES = [
-		'Upgrade159',
-		'Upgrade1672',
-		'Upgrade168',
-		'Upgrade175',
-		'Upgrade1751',
-		'Upgrade177',
-		'Upgrade182',
-	];
-
-	/**
-	 * Custom table handler classes.
-	 *
-	 * @since 1.7.6
-	 * @since 1.8.2 Registered payment tables.
-	 */
-	const CUSTOM_TABLE_HANDLER_CLASSES = [
-		Meta::class,
-		Payment::class,
-		PaymentMeta::class,
-	];
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Migrations\Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Migrations\Migrations.php on line <i>14</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Migrations\Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Migrations\Migrations.php on line <i>14</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360480</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Migrations\Migrations.php" bgcolor="#eeeeec">...\Migrations.php<b>:</b>0</td>
+</tr>
+</table></font>

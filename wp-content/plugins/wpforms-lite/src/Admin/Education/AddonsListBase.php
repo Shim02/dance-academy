@@ -1,62 +1,24 @@
-<?php
-
-namespace WPForms\Admin\Education;
-
-/**
- * Base class for all "addons list" type Education features.
- *
- * @since 1.6.6
- */
-abstract class AddonsListBase extends AddonsItemBase {
-
-	/**
-	 * Display addons.
-	 *
-	 * @since 1.6.6
-	 */
-	public function display_addons() {
-
-		array_map( [ $this, 'display_single_addon' ], (array) $this->get_addons() );
-	}
-
-	/**
-	 * Get addons.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @return array Addons array.
-	 */
-	abstract protected function get_addons();
-
-	/**
-	 * Ensure that we do not display activated addon items if those addons are not allowed according to the current license.
-	 *
-	 * @since 1.6.6
-	 *
-	 * @param string $hook Hook name.
-	 */
-	protected function filter_not_allowed_addons( $hook ) {
-
-		$edu_addons = wp_list_pluck( $this->get_addons(), 'slug' );
-
-		foreach ( $edu_addons as $i => $addon ) {
-			$edu_addons[ $i ] = strtolower( preg_replace( '/[^a-zA-Z0-9]+/', '', $addon ) );
-		}
-
-		if ( empty( $GLOBALS['wp_filter'][ $hook ]->callbacks ) ) {
-			return;
-		}
-
-		foreach ( $GLOBALS['wp_filter'][ $hook ]->callbacks as $priority => $hooks ) {
-			foreach ( $hooks as $name => $arr ) {
-				$class = ! empty( $arr['function'][0] ) && is_object( $arr['function'][0] ) ? strtolower( get_class( $arr['function'][0] ) ) : '';
-				$class = explode( '\\', $class )[0];
-				$class = preg_replace( '/[^a-zA-Z0-9]+/', '', $class );
-
-				if ( in_array( $class, $edu_addons, true ) ) {
-					unset( $GLOBALS['wp_filter'][ $hook ]->callbacks[ $priority ][ $name ] );
-				}
-			}
-		}
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Admin\Education\AddonsItemBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\AddonsListBase.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Admin\Education\AddonsItemBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\AddonsListBase.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0004</td>
+<td bgcolor="#eeeeec" align="right">360544</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Education\AddonsListBase.php" bgcolor="#eeeeec">...\AddonsListBase.php<b>:</b>0</td>
+</tr>
+</table></font>

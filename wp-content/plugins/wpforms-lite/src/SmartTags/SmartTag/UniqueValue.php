@@ -1,91 +1,24 @@
-<?php
-
-namespace WPForms\SmartTags\SmartTag;
-
-/**
- * Class UniqueValue.
- *
- * @since 1.7.5
- */
-class UniqueValue extends SmartTag {
-	/**
-	 * Default length of the unique value to be generated.
-	 *
-	 * @since 1.7.5
-	 *
-	 * @var int
-	 */
-	const DEFAULT_LENGTH = 16;
-
-	/**
-	 * Default format of the unique value to be generated.
-	 *
-	 * @since 1.7.5
-	 *
-	 * @var string
-	 */
-	const DEFAULT_FORMAT = 'alphanumeric';
-
-	/**
-	 * Get smart tag value.
-	 *
-	 * @since 1.7.5
-	 *
-	 * @param array  $form_data Form data.
-	 * @param array  $fields    List of fields.
-	 * @param string $entry_id  Entry ID.
-	 *
-	 * @return string
-	 */
-	public function get_value( $form_data, $fields = [], $entry_id = '' ) {
-
-		$length     = self::DEFAULT_LENGTH;
-		$format     = self::DEFAULT_FORMAT;
-		$attributes = $this->get_attributes();
-
-		if ( array_key_exists( 'length', $attributes ) ) {
-			$length = max( $length, absint( $attributes['length'] ) );
-		}
-
-		if ( array_key_exists( 'format', $attributes ) && ! empty( $attributes['format'] ) ) {
-			$format = $attributes['format'];
-		}
-
-		return $this->generate_string( $length, $format );
-	}
-
-	/**
-	 * Generates a random string in defined format.
-	 *
-	 * @since 1.7.5
-	 *
-	 * @param int    $length Optional. The length of string to generate.
-	 * @param string $format The format of string to generate. Accepts 'alphanumeric',
-	 *                       'numeric', and 'alpha'. Default 'alphanumeric'.
-	 *
-	 * @return string
-	 */
-	private function generate_string( $length = 16, $format = 'alphanumeric' ) {
-
-		$alpha   = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-		$numbers = '0123456789';
-
-		switch ( strtolower( $format ) ) {
-			case 'numeric':
-				$chars = $numbers;
-				break;
-
-			case 'alpha':
-				$chars = $alpha;
-				break;
-
-			default:
-				$chars = $alpha . $numbers;
-				break;
-		}
-
-		$chars = str_pad( $chars, $length, $chars );
-
-		return substr( str_shuffle( $chars ), 0, $length );
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\SmartTags\SmartTag\SmartTag" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\SmartTags\SmartTag\UniqueValue.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\SmartTags\SmartTag\SmartTag" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\SmartTags\SmartTag\UniqueValue.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0008</td>
+<td bgcolor="#eeeeec" align="right">361680</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\SmartTags\SmartTag\UniqueValue.php" bgcolor="#eeeeec">...\UniqueValue.php<b>:</b>0</td>
+</tr>
+</table></font>

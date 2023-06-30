@@ -1,26 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe;
-
-/**
- * A line item.
- *
- * @property string $id Unique identifier for the object.
- * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property int $amount_subtotal Total before any discounts or taxes are applied.
- * @property int $amount_total Total after discounts and taxes.
- * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://stripe.com/docs/currencies">supported currency</a>.
- * @property string $description An arbitrary string attached to the object. Often useful for displaying to users. Defaults to product name.
- * @property \Stripe\StripeObject[] $discounts The discounts applied to the line item.
- * @property null|\Stripe\Price $price The price used to generate the line item.
- * @property null|int $quantity The quantity of products being purchased.
- * @property \Stripe\StripeObject[] $taxes The taxes applied to the line item.
- */
-class LineItem extends ApiResource
-{
-    const OBJECT_NAME = 'item';
-
-    use ApiOperations\All;
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\LineItem.php on line <i>21</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\ApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\LineItem.php on line <i>21</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360600</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\LineItem.php" bgcolor="#eeeeec">...\LineItem.php<b>:</b>0</td>
+</tr>
+</table></font>

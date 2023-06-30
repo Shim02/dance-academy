@@ -1,101 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe\Service;
-
-class ChargeService extends \Stripe\Service\AbstractService
-{
-    /**
-     * Returns a list of charges you’ve previously created. The charges are returned in
-     * sorted order, with the most recent charges appearing first.
-     *
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Collection
-     */
-    public function all($params = null, $opts = null)
-    {
-        return $this->requestCollection('get', '/v1/charges', $params, $opts);
-    }
-
-    /**
-     * Capture the payment of an existing, uncaptured, charge. This is the second half
-     * of the two-step payment flow, where first you <a href="#create_charge">created a
-     * charge</a> with the capture option set to false.
-     *
-     * Uncaptured payments expire exactly seven days after they are created. If they
-     * are not captured by that point in time, they will be marked as refunded and will
-     * no longer be capturable.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Charge
-     */
-    public function capture($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/charges/%s/capture', $id), $params, $opts);
-    }
-
-    /**
-     * To charge a credit card or other payment source, you create a
-     * <code>Charge</code> object. If your API key is in test mode, the supplied
-     * payment source (e.g., card) won’t actually be charged, although everything else
-     * will occur as if in live mode. (Stripe assumes that the charge would have
-     * completed successfully).
-     *
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Charge
-     */
-    public function create($params = null, $opts = null)
-    {
-        return $this->request('post', '/v1/charges', $params, $opts);
-    }
-
-    /**
-     * Retrieves the details of a charge that has previously been created. Supply the
-     * unique charge ID that was returned from your previous request, and Stripe will
-     * return the corresponding charge information. The same information is returned
-     * when creating or refunding the charge.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Charge
-     */
-    public function retrieve($id, $params = null, $opts = null)
-    {
-        return $this->request('get', $this->buildPath('/v1/charges/%s', $id), $params, $opts);
-    }
-
-    /**
-     * Updates the specified charge by setting the values of the parameters passed. Any
-     * parameters not provided will be left unchanged.
-     *
-     * @param string $id
-     * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Charge
-     */
-    public function update($id, $params = null, $opts = null)
-    {
-        return $this->request('post', $this->buildPath('/v1/charges/%s', $id), $params, $opts);
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\ChargeService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\Service\AbstractService" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\ChargeService.php on line <i>7</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360672</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Service\ChargeService.php" bgcolor="#eeeeec">...\ChargeService.php<b>:</b>0</td>
+</tr>
+</table></font>

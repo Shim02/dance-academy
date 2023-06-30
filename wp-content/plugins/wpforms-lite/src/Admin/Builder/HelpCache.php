@@ -1,55 +1,24 @@
-<?php
-
-namespace WPForms\Admin\Builder;
-
-use WPForms\Helpers\CacheBase;
-
-/**
- * Form Builder Help Cache.
- *
- * @since 1.8.2
- */
-class HelpCache extends CacheBase {
-
-	/**
-	 * Determine if the class is allowed to load.
-	 *
-	 * @since 1.8.2
-	 *
-	 * @return bool
-	 */
-	protected function allow_load() {
-
-		if ( wp_doing_cron() || wpforms_doing_wp_cli() ) {
-			return true;
-		}
-
-		if ( ! wpforms_current_user_can( [ 'create_forms', 'edit_forms' ] ) ) {
-			return false;
-		}
-
-		return wpforms_is_admin_page( 'builder' );
-	}
-
-	/**
-	 * Setup settings and other things.
-	 *
-	 * @since 1.8.2
-	 */
-	protected function setup() {
-
-		return [
-			'remote_source' => 'https://wpforms.com/wp-content/docs.json',
-			'cache_file'    => 'docs.json',
-			/**
-			 * Allow modifying Help Docs cache TTL (time to live).
-			 *
-			 * @since 1.6.3
-			 *
-			 * @param int $cache_ttl Cache TTL in seconds. Defaults to 1 week.
-			 */
-			'cache_ttl'     => (int) apply_filters( 'wpforms_admin_builder_help_cache_ttl', WEEK_IN_SECONDS ),
-			'update_action' => 'wpforms_builder_help_cache_update',
-		];
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "WPForms\Helpers\CacheBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Builder\HelpCache.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "WPForms\Helpers\CacheBase" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Builder\HelpCache.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360480</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\src\Admin\Builder\HelpCache.php" bgcolor="#eeeeec">...\HelpCache.php<b>:</b>0</td>
+</tr>
+</table></font>

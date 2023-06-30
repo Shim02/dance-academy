@@ -1,66 +1,24 @@
-<?php
-
-namespace Elementor\App\Modules\ImportExport\Runners\Export;
-
-use Elementor\Core\Base\Document;
-use Elementor\Plugin;
-use Elementor\TemplateLibrary\Source_Local;
-use Elementor\Utils;
-
-class Templates extends Export_Runner_Base {
-
-	public static function get_name() : string {
-		return 'templates';
-	}
-
-	public function should_export( array $data ) {
-		return (
-			Utils::has_pro() &&
-			isset( $data['include'] ) &&
-			in_array( 'templates', $data['include'], true )
-		);
-	}
-
-	public function export( array $data ) {
-		$template_types = array_values( Source_Local::get_template_types() );
-
-		$query_args = [
-			'post_type' => Source_Local::CPT,
-			'post_status' => 'publish',
-			'posts_per_page' => -1,
-			'meta_query' => [
-				[
-					'key' => Document::TYPE_META_KEY,
-					'value' => $template_types,
-				],
-			],
-		];
-
-		$templates_query = new \WP_Query( $query_args );
-
-		$templates_manifest_data = [];
-		$files = [];
-
-		foreach ( $templates_query->posts as $template_post ) {
-			$template_id = $template_post->ID;
-
-			$template_document = Plugin::$instance->documents->get( $template_id );
-
-			$templates_manifest_data[ $template_id ] = $template_document->get_export_summary();
-
-			$files[] = [
-				'path' => 'templates/' . $template_id,
-				'data' => $template_document->get_export_data(),
-			];
-		}
-
-		$manifest_data['templates'] = $templates_manifest_data;
-
-		return [
-			'files' => $files,
-			'manifest' => [
-				$manifest_data,
-			],
-		];
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Elementor\App\Modules\ImportExport\Runners\Export\Export_Runner_Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\export\templates.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Elementor\App\Modules\ImportExport\Runners\Export\Export_Runner_Base" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\export\templates.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0007</td>
+<td bgcolor="#eeeeec" align="right">361536</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\elementor\app\modules\import-export\runners\export\templates.php" bgcolor="#eeeeec">...\templates.php<b>:</b>0</td>
+</tr>
+</table></font>

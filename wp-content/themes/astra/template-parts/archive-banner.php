@@ -1,50 +1,24 @@
-<?php
-/**
- * Template part for displaying archive post's entry banner.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Astra
- * @since 4.0.0
- */
-
-$astra_post_type      = strval( get_post_type() );
-$astra_banner_control = 'ast-dynamic-archive-' . esc_attr( $astra_post_type );
-
-// If description is the only meta available in structure & its blank then no need to render banner markup.
-$astra_archive_structure       = astra_get_option( $astra_banner_control . '-structure', array( $astra_banner_control . '-title', $astra_banner_control . '-description' ) );
-$astra_get_archive_description = astra_get_archive_description( $astra_post_type );
-if ( 1 === count( $astra_archive_structure ) && in_array( $astra_banner_control . '-description', $astra_archive_structure ) && empty( $astra_get_archive_description ) ) {
-	return;
-}
-
-// Conditionally updating data section & class.
-$astra_attr = 'class="ast-archive-entry-banner"';
-if ( is_customize_preview() ) {
-	$astra_attr = 'class="ast-archive-entry-banner ast-post-banner-highlight site-header-focus-item" data-section="' . esc_attr( $astra_banner_control ) . '"';
-}
-
-$astra_layout_type = astra_get_option( $astra_banner_control . '-layout' );
-$astra_data_attrs  = 'data-post-type="' . $astra_post_type . '" data-banner-layout="' . $astra_layout_type . '"';
-
-if ( 'layout-2' === $astra_layout_type && 'custom' === astra_get_option( $astra_banner_control . '-banner-width-type', 'fullwidth' ) ) {
-	$astra_data_attrs .= 'data-banner-width-type="custom"';
-}
-
-$astra_background_type = astra_get_option( $astra_banner_control . '-banner-image-type', 'none' );
-if ( 'layout-2' === $astra_layout_type && 'none' !== $astra_background_type ) {
-	$astra_data_attrs .= 'data-banner-background-type="' . $astra_background_type . '"';
-}
-
-?>
-
-<section <?php echo wp_kses_post( $astra_attr . ' ' . $astra_data_attrs ); ?>>
-	<div class="ast-container">
-		<?php
-		if ( is_customize_preview() ) {
-			Astra_Builder_UI_Controller::render_banner_customizer_edit_button();
-		}
-			astra_banner_elements_order();
-		?>
-	</div>
-</section>
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function get_post_type() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\archive-banner.php on line <i>11</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function get_post_type() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\archive-banner.php on line <i>11</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0005</td>
+<td bgcolor="#eeeeec" align="right">360288</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\archive-banner.php" bgcolor="#eeeeec">...\archive-banner.php<b>:</b>0</td>
+</tr>
+</table></font>

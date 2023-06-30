@@ -1,18 +1,25 @@
-<p><?php esc_html_e( "hCaptcha is a free and privacy-oriented spam prevention service. Within your forms, hCaptcha will display a checkbox asking users to prove they're human (much like Google's v2 Checkbox reCAPTCHA). This is a simple step for legitimate site visitors, but is extremely effective at blocking spam.", 'wpforms-lite' ); ?></p>
-<p>
-	<?php
-	printf(
-		wp_kses( /* translators: %s - WPForms.com Setup hCaptcha URL. */
-			__( 'For more details on how hCaptcha works, as well as a step by step setup guide, please check out our <a href="%s" target="_blank" rel="noopener noreferrer">documentation</a>.', 'wpforms-lite' ),
-			[
-				'a' => [
-					'href'   => [],
-					'target' => [],
-					'rel'    => [],
-				],
-			]
-		),
-		esc_url( wpforms_utm_link( 'https://wpforms.com/docs/how-to-set-up-and-use-hcaptcha-in-wpforms/', 'Settings - Captcha', 'hCaptcha Documentation' ) )
-	);
-	?>
+<p><br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function esc_html_e() in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\templates\admin\settings\hcaptcha-description.php on line <i>1</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function esc_html_e() in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\templates\admin\settings\hcaptcha-description.php on line <i>1</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0004</td>
+<td bgcolor="#eeeeec" align="right">360536</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\templates\admin\settings\hcaptcha-description.php" bgcolor="#eeeeec">...\hcaptcha-description.php<b>:</b>0</td>
+</tr>
+</table></font>
 </p>

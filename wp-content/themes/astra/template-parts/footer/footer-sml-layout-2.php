@@ -1,64 +1,24 @@
-<?php
-/**
- * Template for Small Footer Layout 2
- *
- * @package     Astra
- * @author      Astra
- * @copyright   Copyright (c) 2020, Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
- */
-
-$astra_footer_section_1 = astra_get_small_footer( 'footer-sml-section-1' );
-$astra_footer_section_2 = astra_get_small_footer( 'footer-sml-section-2' );
-$astra_footer_sections  = 0;
-
-if ( '' != $astra_footer_section_1 ) {
-	$astra_footer_sections++;
-}
-
-if ( '' != $astra_footer_section_2 ) {
-	$astra_footer_sections++;
-}
-
-switch ( $astra_footer_sections ) {
-
-	case '2':
-			$astra_footer_section_class = 'ast-small-footer-section-equally ' . astra_attr( 'ast-grid-col-6' );
-		break;
-
-	case '1':
-	default:
-			$astra_footer_section_class = 'ast-small-footer-section-equally ' . astra_attr( 'ast-grid-common-col' );
-		break;
-}
-
-?>
-
-<div class="ast-small-footer footer-sml-layout-2">
-	<div class="ast-footer-overlay">
-		<div class="ast-container">
-			<div class="ast-small-footer-wrap" >
-					<div class="ast-row ast-flex">
-
-					<?php if ( $astra_footer_section_1 ) : ?>
-						<div class="ast-small-footer-section ast-small-footer-section-1 <?php echo esc_attr( $astra_footer_section_class ); ?>" >
-							<?php
-								echo $astra_footer_section_1; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-							?>
-						</div>
-				<?php endif; ?>
-
-					<?php if ( $astra_footer_section_2 ) : ?>
-						<div class="ast-small-footer-section ast-small-footer-section-2 <?php echo esc_attr( $astra_footer_section_class ); ?>" >
-							<?php
-								echo $astra_footer_section_2; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-							?>
-						</div>
-				<?php endif; ?>
-
-					</div> <!-- .ast-row.ast-flex -->
-			</div><!-- .ast-small-footer-wrap -->
-		</div><!-- .ast-container -->
-	</div><!-- .ast-footer-overlay -->
-</div><!-- .ast-small-footer-->
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function astra_get_small_footer() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\footer\footer-sml-layout-2.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function astra_get_small_footer() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\footer\footer-sml-layout-2.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0004</td>
+<td bgcolor="#eeeeec" align="right">360528</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\footer\footer-sml-layout-2.php" bgcolor="#eeeeec">...\footer-sml-layout-2.php<b>:</b>0</td>
+</tr>
+</table></font>

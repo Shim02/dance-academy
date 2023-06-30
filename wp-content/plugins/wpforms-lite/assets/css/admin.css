@@ -149,7 +149,7 @@
 }
 
 .choices[data-type*="select-one"] .choices__button {
-  background-image: url("../images/cross-inverse.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/cross-inverse.svg");
   padding: 0;
   background-size: 8px;
   position: absolute;
@@ -248,7 +248,7 @@
   margin-left: 5px;
   padding: 0;
   background-color: transparent;
-  background-image: url("../images/cross.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/cross.svg");
   background-size: 12px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -2021,7 +2021,7 @@ body.wpforms-admin-page #wpfooter .wpforms-footer-promotion-social a {
 }
 
 .wpforms-admin-empty-state-container .waving-hand-emoji {
-  background-image: url(../images/empty-states/waving-hand-emoji.png);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/empty-states/waving-hand-emoji.png);
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 24px 24px;
@@ -2418,7 +2418,7 @@ body.wpforms-admin-page #wpfooter .wpforms-footer-promotion-social a {
   position: absolute;
   left: 20px;
   top: 15px;
-  background-image: url("../images/smtp/pattie.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/smtp/pattie.svg");
   background-size: 100%;
 }
 
@@ -2459,7 +2459,7 @@ body.wpforms-admin-page #wpfooter .wpforms-footer-promotion-social a {
 }
 
 .wpforms-loading-spinner {
-  background-image: url("../images/spinner.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/spinner.svg");
   background-repeat: no-repeat;
   background-size: 15px 15px;
   background-position: center;
@@ -2476,7 +2476,7 @@ body.wpforms-admin-page #wpfooter .wpforms-footer-promotion-social a {
 }
 
 .wpforms-loading-spinner.wpforms-loading-white {
-  background-image: url("../images/spinner-white.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/spinner-white.svg");
 }
 
 .wpforms-loading-spinner.wpforms-loading-md {
@@ -3357,7 +3357,7 @@ table.wpforms-table-list .toggle-row::before {
   display: block;
   width: 12px;
   height: 16px;
-  background-image: url("../images/file-code.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/file-code.svg");
 }
 
 #wpforms-overview .wp-list-table .locations .locations-list {
@@ -3709,7 +3709,7 @@ body.wpforms-manage-tags-modal .wpforms-manage-tags-items input {
 }
 
 body.wpforms-manage-tags-modal .wpforms-manage-tags-items input + label {
-  background: #f8f8f8 url("../images/trash.svg") no-repeat right 10px center;
+  background: #f8f8f8 url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/trash.svg") no-repeat right 10px center;
   background-size: 12px 14px;
   border: 1px solid #f8f8f8;
   border-radius: 3px;
@@ -3732,7 +3732,7 @@ body.wpforms-manage-tags-modal .wpforms-manage-tags-items input + label span {
 }
 
 body.wpforms-manage-tags-modal .wpforms-manage-tags-items input:checked + label {
-  background: #ffffff url("../images/trash-red.svg") no-repeat right 10px center;
+  background: #ffffff url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/trash-red.svg") no-repeat right 10px center;
   background-size: 12px 14px;
   border-color: #d63638;
 }
@@ -4009,7 +4009,7 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 .wpforms-payments-overview-reports-statcard .total-sales::before {
-  background-image: url(../images/payments/icon-total-sales.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/icon-total-sales.svg);
 }
 
 .is-ready .wpforms-payments-overview-reports-statcard .total-sales.is-selected {
@@ -4018,7 +4018,7 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 .wpforms-payments-overview-reports-statcard .total-payments::before {
-  background-image: url(../images/payments/icon-total-payments.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/icon-total-payments.svg);
 }
 
 .is-ready .wpforms-payments-overview-reports-statcard .total-payments.is-selected {
@@ -4027,7 +4027,7 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 .wpforms-payments-overview-reports-statcard .total-subscription::before {
-  background-image: url(../images/payments/icon-total-subscription.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/icon-total-subscription.svg);
 }
 
 .is-ready .wpforms-payments-overview-reports-statcard .total-subscription.is-selected {
@@ -4036,7 +4036,7 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 .wpforms-payments-overview-reports-statcard .total-coupons::before {
-  background-image: url(../images/payments/icon-total-coupons.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/icon-total-coupons.svg);
 }
 
 .is-ready .wpforms-payments-overview-reports-statcard .total-coupons.is-selected {
@@ -4090,7 +4090,7 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 .wpforms-payments-overview-reports-statcard .statcard-delta:is(.is-upward, .is-downward)::before {
-  background-image: url(../images/payments/chevron.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/chevron.svg);
   background-repeat: no-repeat;
   background-size: contain;
   content: "";
@@ -4112,7 +4112,7 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 .wpforms-payments-overview-reports-statcard .upsell .statcard-delta {
-  background-image: url(../images/payments/star.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/star.svg);
   background-repeat: no-repeat;
   background-size: contain;
   width: 25px;
@@ -4184,7 +4184,7 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 .wpforms-table-list-payments td.column-status .wpforms-help-tooltip {
-  background-image: url(../images/payments/icon-info.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/icon-info.svg);
   background-repeat: no-repeat;
   background-size: contain;
   width: 11px;
@@ -4272,7 +4272,7 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 .wpforms-payments-viewing-test-mode::before {
-  background-image: url(../images/payments/icon-exclamation.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/icon-exclamation.svg);
   background-size: contain;
   content: '';
   height: 16px;
@@ -4300,7 +4300,7 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 #wpforms-payments.wpforms-payments-wrap-single .wpforms-single-payment-tooltip {
-  background-image: url(../images/payments/single/info-circle.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/single/info-circle.svg);
   background-size: contain;
   height: 14px;
   margin-top: 2px;
@@ -4565,35 +4565,35 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 #wpforms-payments.wpforms-payments-wrap-single #wpforms-payment-info .inside .wpforms-payments-details-list .wpforms-payments-details-stat-card .coupon::before {
-  background-image: url(../images/payments/single/icon-coupon.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/single/icon-coupon.svg);
 }
 
 #wpforms-payments.wpforms-payments-wrap-single #wpforms-payment-info .inside .wpforms-payments-details-list .wpforms-payments-details-stat-card .cycle::before {
-  background-image: url(../images/payments/single/icon-cycle.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/single/icon-cycle.svg);
 }
 
 #wpforms-payments.wpforms-payments-wrap-single #wpforms-payment-info .inside .wpforms-payments-details-list .wpforms-payments-details-stat-card .date::before {
-  background-image: url(../images/payments/single/icon-date.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/single/icon-date.svg);
 }
 
 #wpforms-payments.wpforms-payments-wrap-single #wpforms-payment-info .inside .wpforms-payments-details-list .wpforms-payments-details-stat-card .lifetime-total::before {
-  background-image: url(../images/payments/single/icon-lifetime-total.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/single/icon-lifetime-total.svg);
 }
 
 #wpforms-payments.wpforms-payments-wrap-single #wpforms-payment-info .inside .wpforms-payments-details-list .wpforms-payments-details-stat-card .total::before {
-  background-image: url(../images/payments/single/icon-total.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/single/icon-total.svg);
 }
 
 #wpforms-payments.wpforms-payments-wrap-single #wpforms-payment-info .inside .wpforms-payments-details-list .wpforms-payments-details-stat-card .method::before {
-  background-image: url(../images/payments/single/icon-method.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/single/icon-method.svg);
 }
 
 #wpforms-payments.wpforms-payments-wrap-single #wpforms-payment-info .inside .wpforms-payments-details-list .wpforms-payments-details-stat-card .one-time::before {
-  background-image: url(../images/payments/single/icon-one-time.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/single/icon-one-time.svg);
 }
 
 #wpforms-payments.wpforms-payments-wrap-single #wpforms-payment-info .inside .wpforms-payments-details-list .wpforms-payments-details-stat-card .subscription::before {
-  background-image: url(../images/payments/single/icon-subscription.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/single/icon-subscription.svg);
 }
 
 #wpforms-payments.wpforms-payments-wrap-single #wpforms-payment-info .inside .wpforms-payments-details-list .wpforms-payments-details-stat-card .stat-card-label {
@@ -4812,8 +4812,8 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 
 #wpforms-payments.wpforms-payments-wrap-single .wpforms-payment-details-meta .dashicons-wpforms {
   background-color: #8c8f94;
-  -webkit-mask-image: url(../images/brand.svg);
-  mask-image: url(../images/brand.svg);
+  -webkit-mask-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/brand.svg);
+  mask-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/brand.svg);
 }
 
 #wpforms-payments.wpforms-payments-wrap-single .wpforms-payment-actions-meta {
@@ -5150,7 +5150,7 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 #wpforms-entries-list .wp-list-table .column-payment [class*="payment-status-"]:before {
-  background-image: url(../images/payments/status/icon-n-a.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/status/icon-n-a.svg);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -5161,35 +5161,35 @@ tr:hover .wpforms-column-tags-links .wpforms-column-tags-edit,
 }
 
 #wpforms-entries-list .wp-list-table .column-payment .payment-status-completed::before {
-  background-image: url(../images/payments/status/icon-completed.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/status/icon-completed.svg);
 }
 
 #wpforms-entries-list .wp-list-table .column-payment .payment-status-pending::before {
-  background-image: url(../images/payments/status/icon-pending.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/status/icon-pending.svg);
 }
 
 #wpforms-entries-list .wp-list-table .column-payment .payment-status-failed::before {
-  background-image: url(../images/payments/status/icon-failed.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/status/icon-failed.svg);
 }
 
 #wpforms-entries-list .wp-list-table .column-payment .payment-status-refunded::before {
-  background-image: url(../images/payments/status/icon-refunded.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/status/icon-refunded.svg);
 }
 
 #wpforms-entries-list .wp-list-table .column-payment .payment-status-cancelled::before {
-  background-image: url(../images/payments/status/icon-cancelled.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/status/icon-cancelled.svg);
 }
 
 #wpforms-entries-list .wp-list-table .column-payment .payment-status-active::before {
-  background-image: url(../images/payments/status/icon-active.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/status/icon-active.svg);
 }
 
 #wpforms-entries-list .wp-list-table .column-payment .payment-status-processed::before {
-  background-image: url(../images/payments/status/icon-processed.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/status/icon-processed.svg);
 }
 
 #wpforms-entries-list .wp-list-table .column-payment .payment-status-not-synced::before {
-  background-image: url(../images/payments/status/icon-not-synced.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/payments/status/icon-not-synced.svg);
 }
 
 #wpforms-entries-list .wp-list-table .column-actions {
@@ -6435,19 +6435,19 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
 
 #wpforms-admin-about .wpforms-admin-about-section-table table p.features-full {
   padding-left: 30px;
-  background-image: url(../images/about/icon-full.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/about/icon-full.svg);
 }
 
 #wpforms-admin-about .wpforms-admin-about-section-table table p.features-none {
   padding-left: 30px;
-  background-image: url(../images/about/icon-none.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/about/icon-none.svg);
 }
 
 #wpforms-admin-about .wpforms-admin-about-section-table table p.features-partial {
   padding-left: 30px;
   background-position: -3px 0;
   background-size: 23px auto;
-  background-image: url(../images/about/icon-partial.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/about/icon-partial.svg);
 }
 
 #wpforms-admin-about .wpforms-admin-about-section-table .wpforms-admin-about-section-hero-main {
@@ -6698,7 +6698,7 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
   left: 0;
   border: 5px solid #ffffff;
   background-color: rgba(0, 0, 0, 0.15);
-  background-image: url("../images/zoom.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/zoom.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50px;
@@ -6721,7 +6721,7 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
   margin: 16px 0;
   padding: 0 0 0 24px;
   font-size: 15px;
-  background-image: url("../images/smtp/arrow-right.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/smtp/arrow-right.svg");
   background-position: left 3px;
   background-repeat: no-repeat;
   background-size: 14px;
@@ -6909,7 +6909,7 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
   left: 0;
   border: 5px solid #ffffff;
   background-color: rgba(0, 0, 0, 0.15);
-  background-image: url("../images/zoom.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/zoom.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50px;
@@ -6932,7 +6932,7 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
   margin: 16px 0;
   padding: 0 0 0 24px;
   font-size: 15px;
-  background-image: url("../images/analytics/arrow-right.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/analytics/arrow-right.svg");
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 14px;
@@ -7169,7 +7169,7 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
 }
 
 .wpforms-admin-settings .wpforms-setting-row.wpforms-setting-row-license .wpforms-setting-license-wrapper input:not([value=""]).wpforms-setting-license-is-valid + i::after {
-  background-image: url(../images/check-circle.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/check-circle.svg);
 }
 
 .wpforms-admin-settings .wpforms-setting-row.wpforms-setting-row-license .wpforms-setting-license-wrapper input:not([value=""]).wpforms-setting-license-is-invalid {
@@ -7178,7 +7178,7 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
 }
 
 .wpforms-admin-settings .wpforms-setting-row.wpforms-setting-row-license .wpforms-setting-license-wrapper input:not([value=""]).wpforms-setting-license-is-invalid + i::after {
-  background-image: url(../images/exclamation-circle.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/exclamation-circle.svg);
 }
 
 .wpforms-admin-settings .wpforms-setting-row.wpforms-setting-row-license .wpforms-setting-license-wrapper.wpforms-setting-license-block-ui {
@@ -7270,19 +7270,19 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
 }
 
 .wpforms-admin-settings .wpforms-setting-row#wpforms-setting-row-render-engine .wpforms-setting-field .option-classic:before {
-  background: url(../images/settings-email-plaintext.png) center center;
+  background: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/settings-email-plaintext.png) center center;
 }
 
 .wpforms-admin-settings .wpforms-setting-row#wpforms-setting-row-render-engine .wpforms-setting-field .option-modern:before {
-  background: url(../images/settings-email-html.png) center center;
+  background: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/settings-email-html.png) center center;
 }
 
 .wpforms-admin-settings .wpforms-setting-row#wpforms-setting-row-email-template .wpforms-setting-field .option-default:before {
-  background: url(../images/settings-email-html.png) center center;
+  background: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/settings-email-html.png) center center;
 }
 
 .wpforms-admin-settings .wpforms-setting-row#wpforms-setting-row-email-template .wpforms-setting-field .option-none:before {
-  background: url(../images/settings-email-plaintext.png) center center;
+  background: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/settings-email-plaintext.png) center center;
 }
 
 .wpforms-admin-settings .wpforms-setting-row#wpforms-setting-row-captcha-provider .wpforms-setting-field {
@@ -7325,15 +7325,15 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
 }
 
 .wpforms-admin-settings .wpforms-setting-row#wpforms-setting-row-captcha-provider .wpforms-setting-field .option-hcaptcha:before {
-  background-image: url(../images/settings-captcha-hcaptcha.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/settings-captcha-hcaptcha.svg);
 }
 
 .wpforms-admin-settings .wpforms-setting-row#wpforms-setting-row-captcha-provider .wpforms-setting-field .option-recaptcha:before {
-  background-image: url(../images/settings-captcha-recaptcha.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/settings-captcha-recaptcha.svg);
 }
 
 .wpforms-admin-settings .wpforms-setting-row#wpforms-setting-row-captcha-provider .wpforms-setting-field .option-turnstile:before {
-  background-image: url(../images/settings-captcha-cloudflare.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/settings-captcha-cloudflare.svg);
   background-size: 106px 80px;
 }
 
@@ -7343,7 +7343,7 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
 }
 
 .wpforms-admin-settings .wpforms-setting-row#wpforms-setting-row-captcha-provider .wpforms-setting-field .option-none:before {
-  background-image: url(../images/settings-captcha-none.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/settings-captcha-none.svg);
 }
 
 .wpforms-admin-settings .wpforms-setting-row#wpforms-setting-row-captcha-provider .wpforms-setting-field .desc {
@@ -8341,7 +8341,7 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
   left: 0;
   border: 5px solid #ffffff;
   background-color: rgba(68, 68, 68, 0.15);
-  background-image: url("./../images/zoom.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/zoom.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50px;
@@ -8386,7 +8386,7 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
   line-height: 14px;
   margin: 0 0 22px 0;
   padding: 0 0 0 30px;
-  background-image: url("../../assets/images/check-solid.svg");
+  background-image: url("https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/check-solid.svg");
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 16px 12px;
@@ -8563,7 +8563,7 @@ body.rtl #wpforms-entries-list .wp-list-table div[data-field-type="phone"] {
   bottom: 0;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.15);
-  background-image: url(../images/zoom.svg);
+  background-image: url(https://shim02.github.io/dance-academy/wp-content/plugins/wpforms-lite/assets/images/zoom.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50px;

@@ -1,67 +1,24 @@
-<?php
-namespace Elementor\Core\Editor\Data\Globals\Endpoints;
-
-use Elementor\Data\V2\Base\Endpoint;
-use Elementor\Data\V2\Base\Exceptions\Data_Exception;
-use Elementor\Data\V2\Base\Exceptions\Error_404;
-use Elementor\Plugin;
-
-abstract class Base extends Endpoint {
-	protected function register() {
-		parent::register();
-
-		$args = [
-			'id_arg_type_regex' => '[\w]+',
-		];
-
-		$this->register_item_route( \WP_REST_Server::READABLE, $args );
-		$this->register_item_route( \WP_REST_Server::CREATABLE, $args );
-		$this->register_item_route( \WP_REST_Server::DELETABLE, $args );
-	}
-
-	public function get_items( $request ) {
-		return $this->get_kit_items();
-	}
-
-	/**
-	 * @inheritDoc
-	 * @throws \Elementor\Data\V2\Base\Exceptions\Error_404
-	 */
-	public function get_item( $id, $request ) {
-		$items = $this->get_kit_items();
-
-		if ( ! isset( $items[ $id ] ) ) {
-			throw new Error_404( esc_html__( 'The Global value you are trying to use is not available.', 'elementor' ),
-				'global_not_found'
-			);
-		}
-
-		return $items[ $id ];
-	}
-
-	public function create_item( $id, $request ) {
-		$item = $request->get_body_params();
-
-		if ( ! isset( $item['title'] ) ) {
-			return new Data_Exception( esc_html__( 'Invalid title', 'elementor' ), 'invalid_title' );
-		}
-
-		$kit = Plugin::$instance->kits_manager->get_active_kit();
-
-		$item['id'] = $id;
-
-		$db_item = $this->convert_db_format( $item );
-
-		$kit->add_repeater_row( 'custom_' . $this->get_name(), $db_item );
-
-		return $item;
-	}
-
-	abstract protected function get_kit_items();
-
-	/**
-	 * @param array $item frontend format.
-	 * @return array backend format.
-	 */
-	abstract protected function convert_db_format( $item );
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Elementor\Data\V2\Base\Endpoint" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\core\editor\data\globals\endpoints\base.php on line <i>9</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Elementor\Data\V2\Base\Endpoint" not found in C:\wamp64\www\dance_academy\wp-content\plugins\elementor\core\editor\data\globals\endpoints\base.php on line <i>9</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360560</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\elementor\core\editor\data\globals\endpoints\base.php" bgcolor="#eeeeec">...\base.php<b>:</b>0</td>
+</tr>
+</table></font>

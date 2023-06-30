@@ -1,45 +1,24 @@
-<?php
-
-// File generated from our OpenAPI spec
-
-namespace Stripe;
-
-/**
- * This is an object representing your Stripe balance. You can retrieve it to see
- * the balance currently on your Stripe account.
- *
- * You can also retrieve the balance history, which contains a list of <a
- * href="https://stripe.com/docs/reporting/balance-transaction-types">transactions</a>
- * that contributed to the balance (charges, payouts, and so forth).
- *
- * The available and pending amounts for each currency are broken down further by
- * payment source types.
- *
- * Related guide: <a
- * href="https://stripe.com/docs/connect/account-balances">Understanding Connect
- * Account Balances</a>.
- *
- * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property \Stripe\StripeObject[] $available Funds that are available to be transferred or paid out, whether automatically by Stripe or explicitly via the <a href="https://stripe.com/docs/api#transfers">Transfers API</a> or <a href="https://stripe.com/docs/api#payouts">Payouts API</a>. The available balance for each currency and payment type can be found in the <code>source_types</code> property.
- * @property \Stripe\StripeObject[] $connect_reserved Funds held due to negative balances on connected Custom accounts. The connect reserve balance for each currency and payment type can be found in the <code>source_types</code> property.
- * @property \Stripe\StripeObject[] $instant_available Funds that can be paid out using Instant Payouts.
- * @property \Stripe\StripeObject $issuing
- * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property \Stripe\StripeObject[] $pending Funds that are not yet available in the balance, due to the 7-day rolling pay cycle. The pending balance for each currency, and for each payment type, can be found in the <code>source_types</code> property.
- */
-class Balance extends SingletonApiResource
-{
-    const OBJECT_NAME = 'balance';
-
-    /**
-     * @param null|array|string $opts
-     *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
-     *
-     * @return \Stripe\Balance
-     */
-    public static function retrieve($opts = null)
-    {
-        return self::_singletonRetrieve($opts);
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\SingletonApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Balance.php on line <i>30</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\SingletonApiResource" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Balance.php on line <i>30</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0002</td>
+<td bgcolor="#eeeeec" align="right">360848</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Balance.php" bgcolor="#eeeeec">...\Balance.php<b>:</b>0</td>
+</tr>
+</table></font>

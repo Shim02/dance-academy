@@ -1,84 +1,24 @@
-<?php
-
-namespace Stripe\Exception;
-
-/**
- * CardException is thrown when a user enters a card that can't be charged for
- * some reason.
- */
-class CardException extends ApiErrorException
-{
-    protected $declineCode;
-    protected $stripeParam;
-
-    /**
-     * Creates a new CardException exception.
-     *
-     * @param string $message the exception message
-     * @param null|int $httpStatus the HTTP status code
-     * @param null|string $httpBody the HTTP body as a string
-     * @param null|array $jsonBody the JSON deserialized body
-     * @param null|array|\Stripe\Util\CaseInsensitiveArray $httpHeaders the HTTP headers array
-     * @param null|string $stripeCode the Stripe error code
-     * @param null|string $declineCode the decline code
-     * @param null|string $stripeParam the parameter related to the error
-     *
-     * @return CardException
-     */
-    public static function factory(
-        $message,
-        $httpStatus = null,
-        $httpBody = null,
-        $jsonBody = null,
-        $httpHeaders = null,
-        $stripeCode = null,
-        $declineCode = null,
-        $stripeParam = null
-    ) {
-        $instance = parent::factory($message, $httpStatus, $httpBody, $jsonBody, $httpHeaders, $stripeCode);
-        $instance->setDeclineCode($declineCode);
-        $instance->setStripeParam($stripeParam);
-
-        return $instance;
-    }
-
-    /**
-     * Gets the decline code.
-     *
-     * @return null|string
-     */
-    public function getDeclineCode()
-    {
-        return $this->declineCode;
-    }
-
-    /**
-     * Sets the decline code.
-     *
-     * @param null|string $declineCode
-     */
-    public function setDeclineCode($declineCode)
-    {
-        $this->declineCode = $declineCode;
-    }
-
-    /**
-     * Gets the parameter related to the error.
-     *
-     * @return null|string
-     */
-    public function getStripeParam()
-    {
-        return $this->stripeParam;
-    }
-
-    /**
-     * Sets the parameter related to the error.
-     *
-     * @param null|string $stripeParam
-     */
-    public function setStripeParam($stripeParam)
-    {
-        $this->stripeParam = $stripeParam;
-    }
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "Stripe\Exception\ApiErrorException" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Exception\CardException.php on line <i>9</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "Stripe\Exception\ApiErrorException" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Exception\CardException.php on line <i>9</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0003</td>
+<td bgcolor="#eeeeec" align="right">361024</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\stripe\stripe-php\lib\Exception\CardException.php" bgcolor="#eeeeec">...\CardException.php<b>:</b>0</td>
+</tr>
+</table></font>

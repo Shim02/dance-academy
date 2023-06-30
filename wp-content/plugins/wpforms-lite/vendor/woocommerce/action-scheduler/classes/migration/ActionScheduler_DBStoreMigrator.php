@@ -1,47 +1,24 @@
-<?php
-
-/**
- * Class ActionScheduler_DBStoreMigrator
- *
- * A  class for direct saving of actions to the table data store during migration.
- *
- * @since 3.0.0
- */
-class ActionScheduler_DBStoreMigrator extends ActionScheduler_DBStore {
-
-	/**
-	 * Save an action with optional last attempt date.
-	 *
-	 * Normally, saving an action sets its attempted date to 0000-00-00 00:00:00 because when an action is first saved,
-	 * it can't have been attempted yet, but migrated completed actions will have an attempted date, so we need to save
-	 * that when first saving the action.
-	 *
-	 * @param ActionScheduler_Action $action
-	 * @param \DateTime $scheduled_date Optional date of the first instance to store.
-	 * @param \DateTime $last_attempt_date Optional date the action was last attempted.
-	 *
-	 * @return string The action ID
-	 * @throws \RuntimeException When the action is not saved.
-	 */
-	public function save_action( ActionScheduler_Action $action, \DateTime $scheduled_date = null, \DateTime $last_attempt_date = null ){
-		try {
-			/** @var \wpdb $wpdb */
-			global $wpdb;
-
-			$action_id = parent::save_action( $action, $scheduled_date );
-
-			if ( null !== $last_attempt_date ) {
-				$data = [
-					'last_attempt_gmt'   => $this->get_scheduled_date_string( $action, $last_attempt_date ),
-					'last_attempt_local' => $this->get_scheduled_date_string_local( $action, $last_attempt_date ),
-				];
-
-				$wpdb->update( $wpdb->actionscheduler_actions, $data, array( 'action_id' => $action_id ), array( '%s', '%s' ), array( '%d' ) );
-			}
-
-			return $action_id;
-		} catch ( \Exception $e ) {
-			throw new \RuntimeException( sprintf( __( 'Error saving action: %s', 'action-scheduler' ), $e->getMessage() ), 0 );
-		}
-	}
-}
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Class "ActionScheduler_DBStore" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\migration\ActionScheduler_DBStoreMigrator.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Class "ActionScheduler_DBStore" not found in C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\migration\ActionScheduler_DBStoreMigrator.php on line <i>10</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0298</td>
+<td bgcolor="#eeeeec" align="right">361968</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\plugins\wpforms-lite\vendor\woocommerce\action-scheduler\classes\migration\ActionScheduler_DBStoreMigrator.php" bgcolor="#eeeeec">...\ActionScheduler_DBStoreMigrator.php<b>:</b>0</td>
+</tr>
+</table></font>

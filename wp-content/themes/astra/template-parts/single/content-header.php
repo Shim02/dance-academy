@@ -1,48 +1,24 @@
-<?php
-/**
- * Template for Single Page
- *
- * @package     Astra
- * @author      Astra
- * @copyright   Copyright (c) 2022, Astra
- * @link        https://wpastra.com/
- * @since       Astra 4.0.0
- */
-
-if ( apply_filters( 'astra_single_layout_one_banner_visibility', true ) ) { ?>
-
-	<header class="entry-header <?php astra_entry_header_class(); ?>">
-		<?php astra_banner_elements_order(); ?>
-	</header> <!-- .entry-header -->
-
-<?php } ?>
-
-<div class="entry-content clear"
-	<?php
-			echo astra_attr(
-				'article-entry-content-page',
-				array(
-					'class' => '',
-				)
-			);
-			?>
->
-
-	<?php astra_entry_content_before(); ?>
-
-	<?php the_content(); ?>
-
-	<?php astra_entry_content_after(); ?>
-
-	<?php
-		wp_link_pages(
-			array(
-				'before'      => '<div class="page-links">' . esc_html( astra_default_strings( 'string-single-page-links-before', false ) ),
-				'after'       => '</div>',
-				'link_before' => '<span class="page-link">',
-				'link_after'  => '</span>',
-			)
-		);
-		?>
-
-</div><!-- .entry-content .clear -->
+<br>
+<font size="1"><table class="xdebug-error xe-uncaught-exception" dir="ltr" border="1" cellspacing="0" cellpadding="1">
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Fatal error: Uncaught Error: Call to undefined function apply_filters() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\single\content-header.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#f57900" colspan="5">
+<span style="background-color: #cc0000; color: #fce94f; font-size: x-large;">( ! )</span> Error: Call to undefined function apply_filters() in C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\single\content-header.php on line <i>12</i>
+</th></tr>
+<tr><th align="left" bgcolor="#e9b96e" colspan="5">Call Stack</th></tr>
+<tr>
+<th align="center" bgcolor="#eeeeec">#</th>
+<th align="left" bgcolor="#eeeeec">Time</th>
+<th align="left" bgcolor="#eeeeec">Memory</th>
+<th align="left" bgcolor="#eeeeec">Function</th>
+<th align="left" bgcolor="#eeeeec">Location</th>
+</tr>
+<tr>
+<td bgcolor="#eeeeec" align="center">1</td>
+<td bgcolor="#eeeeec" align="center">0.0004</td>
+<td bgcolor="#eeeeec" align="right">360240</td>
+<td bgcolor="#eeeeec">{main}(  )</td>
+<td title="C:\wamp64\www\dance_academy\wp-content\themes\astra\template-parts\single\content-header.php" bgcolor="#eeeeec">...\content-header.php<b>:</b>0</td>
+</tr>
+</table></font>
